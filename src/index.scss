@@ -11,3 +11,196 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+$widthG: 100%;
+$height: 30px;
+$backgrounColorI: #ddd;
+$backgrounColorE:  green;
+$borderColorE:  green;
+$colorE:  green;
+
+.container{
+  width: $widthG;
+}
+.progressBar{
+  counter-reset:step;
+}
+.progressBar li{
+  list-style-type:none;
+  float: left;
+  width: 33.33%;
+  position:relative;
+  text-align: center;
+}
+//estilos del circulo
+.progressBar li:before{
+  content: counter(step);
+  counter-increment: step;
+  width: $height;
+  line-height:$height;
+  border:1px solid $backgrounColorI;
+  display: block;
+  text-align: center;
+  margin: 0 auto 10px auto;
+  border-radius: 50%;
+  background-color: white;
+}
+//estilos para la linea 
+.progressBar li:after{
+  content:'';
+  position: absolute;
+  width: $widthG;
+  height: 1px;
+  background-color: $backgrounColorI;
+  top: 15px;
+  left: -50%;
+  z-index: -1;
+}
+.progressBar li:first-child:after{
+  content:none;
+}
+//color del texto dataClient
+.progressBar li.active{
+  color: $colorE;
+}
+// no se vean en verde todos los circulos
+.progressBar li.active:before{
+  border-color:$colorE;
+}
+//union: color del texto + estilos de la linea
+/* .progressBar li.active + li:after{
+  background-color: $backgrounColorE;
+} */
+
+h1 .formulario{
+  display: block;
+  position: relative;
+  text-align: center;
+  margin-top: 20%;
+}
+.formulario{
+  display: block;
+  position: relative;
+  text-align: center;
+  margin-top: 10%;
+}
+// .container{
+//   max-width: 1440px;
+// }
+
+.btn-navbar{
+  /* margin-right:2em; */
+  margin-left:2em;
+}
+
+.navbar-nav .nav-link {
+  font-size: 20px;
+}
+
+.nav-link{
+  padding: 0rem;
+}
+
+.img-fluid{
+  width: 100%;
+  height: 200px;
+}
+
+.padded{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+// #containerRoot .col {
+//   padding-left: 0px;
+//   padding-right: 0px;
+// }
+
+// #containerRoot {
+//   height: 100vh;
+// }
+
+.modal.right .modal-dialog {
+	width: 320px;
+	height: 100%;
+	transform: translate3d(0%, 0, 0);
+}
+
+.modal.right .modal-content {
+	overflow-y: auto;
+}
+
+.modal.right.fade .modal-dialog {
+	right: -320px;
+	transition: opacity 0.3s linear, left 0.3s ease-out;
+}
+
+.modal.right.fade.show .modal-dialog {
+	right: 0;
+}
+
+/* ----- MODAL STYLE ----- */
+.menuModal .modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 1.8rem;
+  pointer-events: none;
+}
+
+.menuModal.modal-content {
+	border-radius: 0;
+  border: 0 !important;
+  background-color: #a83a3a;
+}
+
+.menuModal.modal-header {
+	border-bottom-color: #faf2f2ab;
+	background-color: #a83a3a;
+}
+
+.menuModal.modal{
+  height: 0 !important;
+  top: -30px !important;
+}
+.menuModal.modal-body{
+  background-color: #a83a3a;
+}
+.menuModal.modal-body a{
+  color:white;
+}
+.menuModal.modal-header {
+  border-bottom-color: #fafafa;
+  background-color:#a83a3a;
+  border-bottom: 0 !important;
+  padding: 0.5rem 1rem;
+}
+
+.menuModal a {
+  color: #fff;
+  text-decoration: none;
+  background-color: transparent;
+}
+.menuModal a:hover {
+  color: #808080 !important;
+  text-decoration: none;
+}
+
+.navegation a{
+  height: 60px;
+}
+
+@media only screen and (max-width: 994px) {
+  .navegation  a{
+    display: none;
+  }
+
+}
+
+@media only screen and (min-width: 994px) {
+  .menuModal .modal-dialog{
+    display: none;
+  }
+  .menuModal .modal-backdrop{
+    display: none;
+  }
+}
