@@ -20,13 +20,10 @@ const FormSection = (props) => {
     monto: '',
     plazo: '',
     ingreso: '',
-    dni: '',
-    ubicación: '',
-    rubro: '',
   };
   const [values, setValues] = useState(initialStateValues);
   const handleChange = (e) => {
-    console.log('storaged');
+    console.log('select', e);
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
   };
@@ -35,6 +32,7 @@ const FormSection = (props) => {
     handleSubmitForm(values);
     setValues(initialStateValues);
   };
+  // const options = ['soles', 'dólares'];
   // const onFormSubmit = (event) => {
   //   event.preventDefault();
   //   // submitForm();
@@ -50,15 +48,15 @@ const FormSection = (props) => {
             value={values.moneda}
             onChange={handleChange}
           >
-            <option>soles</option>
-            <option>dólares</option>
+            <option value="soles">soles</option>
+            <option value="dolares">dólares</option>
           </Form.Control>
         </Form.Group>
         <Form.Group as={Col} md="4" controlId="validationCustom01">
           <Form.Label>Monto Solictado</Form.Label>
           <Form.Control
             required
-            type="text"
+            type="number"
             placeholder="5000"
             name="monto"
             value={values.monto}
@@ -72,7 +70,7 @@ const FormSection = (props) => {
           <Form.Label>Plazo</Form.Label>
           <Form.Control
             required
-            type="text"
+            type="number"
             placeholder="12 meses"
             name="plazo"
             value={values.plazo}
@@ -93,46 +91,6 @@ const FormSection = (props) => {
           <Form.Control.Feedback type="invalid">
             Ingrese el monto solicitado.
           </Form.Control.Feedback>
-
-        </Form.Group>
-
-        <Form.Group as={Col} md="4" controlId="validationCustom03">
-          <Form.Label>DNI</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="DNI"
-            name="dni"
-            value={values.dni}
-            onChange={handleChange}
-            required
-          />
-          <Form.Control.Feedback type="invalid">
-            Ingrese su número de DNI.
-          </Form.Control.Feedback>
-        </Form.Group>
-        <Form.Group as={Col} md="4" controlId="validationCustom04">
-          <Form.Label>Ubicación</Form.Label>
-          <Form.Control
-            as="select"
-            name="ubicación"
-            value={values.ubicación}
-            onChange={handleChange}
-          >
-            <option>Lima</option>
-            <option>Callao</option>
-          </Form.Control>
-        </Form.Group>
-        <Form.Group as={Col} md="4" controlId="validationCustom05">
-          <Form.Label>Rubro</Form.Label>
-          <Form.Control
-            as="select"
-            name="rubro"
-            value={values.rubro}
-            onChange={handleChange}
-          >
-            <option>Comercio</option>
-            <option>Industria</option>
-          </Form.Control>
         </Form.Group>
         <Form.Group as={Col} md="4">
           <Form.Check
@@ -146,7 +104,7 @@ const FormSection = (props) => {
           <Button
             type="submit"
           >
-            Submit form
+            Comparar
           </Button>
         </Form.Group>
       </Form>
