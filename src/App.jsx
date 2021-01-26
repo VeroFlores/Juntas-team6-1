@@ -1,6 +1,6 @@
 /* eslint-disable import/no-unresolved */
-import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import React, { useState } from 'react';
 import './App.css';
 import Home from './components/Home';
 import Servicios from './components/Servicios';
@@ -8,10 +8,16 @@ import ViewMenu from './components/ViewMenu';
 import DataClient from './components/Prestamo/DataClient';
 import SelectBank from './components/Prestamo/SelectBank';
 import Completed from './components/Prestamo/Completed';
-
+import { saveData } from './firebase/function';
 // import db from './firebase';
 
-function App() {
+const App = () => {
+  const [stateForm, setStateForm] = useState([]);
+  const handleSubmitForm = (values) => {
+    setStateForm([values]);
+    saveData(values);
+  };
+  console.log(stateForm);
   return (
     <div className="App">
       <BrowserRouter>
@@ -24,7 +30,7 @@ function App() {
             <Servicios />
           </Route>
           <Route path="/dataClient">
-            <DataClient />
+            <DataClient handleSubmitForm={handleSubmitForm} />
           </Route>
           <Route path="/selectBank">
             <SelectBank />
@@ -36,6 +42,6 @@ function App() {
       </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;
