@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react';
 import Image from 'react-bootstrap/Image';
 import {
   Col, Row,
@@ -89,4 +89,4 @@ const Prestamos = () => (
     </section>
   </>
 );
-export default Prestamos;
+export default Prestamos; */

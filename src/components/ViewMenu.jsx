@@ -19,7 +19,7 @@ const ViewMenu = () => {
         <Nav className="mx-auto mt-2 mb-2">
           <Nav.Link href="#"><Link to="/" className="btn-navbar nav-link">Inicio</Link></Nav.Link>
           <Nav.Link href="#Servicios"><Link to="/Servicios" className="btn-navbar nav-link">Servicios</Link></Nav.Link>
-          <Nav.Link href="#Prestamos"><Link to="/prestamos" className="btn-navbar nav-link">Prestamos</Link></Nav.Link>
+          <Nav.Link href="#dataClient"><Link to="/dataClient" className="btn-navbar nav-link">Prestamos</Link></Nav.Link>
         </Nav>
         <button className="navbar-toggler" type="button" onClick={handleShow}>
           <span className="navbar-toggler-icon" />
@@ -34,7 +34,7 @@ const ViewMenu = () => {
               <Nav className="mx-auto mt-2 mb-2">
                 <Nav.Link href="#"><Link to="/" className="btn-navbar nav-link" onClick={handleClose}>Inicio</Link></Nav.Link>
                 <Nav.Link href="#Servicios"><Link to="/Servicios" className="btn-navbar nav-link" onClick={handleClose}>Servicios</Link></Nav.Link>
-                <Nav.Link href="#Prestamos"><Link to="/prestamos" className="btn-navbar nav-link" onClick={handleClose}>Prestamos</Link></Nav.Link>
+                <Nav.Link href="#DataClient"><Link to="/dataClient" className="btn-navbar nav-link" onClick={handleClose}>Prestamos</Link></Nav.Link>
               </Nav>
             </Modal.Body>
           </div>
