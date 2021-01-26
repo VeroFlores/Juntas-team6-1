@@ -10,22 +10,22 @@ import Prestamos from './components/Prestamos';
 
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <ViewMenu />
-        <Switch>
-          <Route path="/" exact>
-            <Home />
-          </Route>
-          <Route path="/servicios">
-            <Servicios />
-          </Route>
-          <Route path="/prestamos">
-            <Prestamos />
-          </Route>
-        </Switch>
-      </BrowserRouter>
-    </div>
+  // <div className="App">
+    <BrowserRouter>
+      <ViewMenu />
+      <Switch>
+        <Route path="/" exact>
+          <Home />
+        </Route>
+        <Route path="/servicios">
+          <Servicios />
+        </Route>
+        <Route path="/prestamos">
+          <Prestamos />
+        </Route>
+      </Switch>
+    </BrowserRouter>
+  // </div>
   );
 }
 
