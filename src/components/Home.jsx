@@ -1,21 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import FormSection from './Form';
 
-const Home = (props) => {
-  const { handleSubmitForm } = props;
-  return (
-    <>
-      <FormSection handleSubmitForm={handleSubmitForm} />
-    </>
-  );
-};
+const Home = () => (
+  <>
+    <section id="home" className="padded">
+      <h1>Home</h1>
+    </section>
+  </>
+);
+
 export default Home;
-Home.propTypes = {
-  // handleInputChange: PropTypes.func.isRequired,
-  handleSubmitForm: PropTypes.func.isRequired,
 
-};
 // Home.propTypes = {
 //   handleInputChange: PropTypes.func.isRequired,
 

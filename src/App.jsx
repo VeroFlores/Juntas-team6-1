@@ -1,12 +1,13 @@
-/* eslint-disable import/no-unresolved */
-import React, { useState } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import React, { useState } from 'react';
 import './App.css';
 import Home from './components/Home';
 import Servicios from './components/Servicios';
 import ViewMenu from './components/ViewMenu';
-import Prestamos from './components/Prestamos';
-import saveData from './firebase/function';
+import DataClient from './components/Prestamo/DataClient';
+import SelectBank from './components/Prestamo/SelectBank';
+import Completed from './components/Prestamo/Completed';
+import { saveData } from './firebase/function';
 // import db from './firebase';
 
 const App = () => {
@@ -27,8 +28,14 @@ const App = () => {
           <Route path="/servicios">
             <Servicios />
           </Route>
-          <Route path="/prestamos">
-            <Prestamos />
+          <Route path="/dataClient">
+            <DataClient handleSubmitForm={handleSubmitForm} />
+          </Route>
+          <Route path="/selectBank">
+            <SelectBank />
+          </Route>
+          <Route path="/completed">
+            <Completed />
           </Route>
         </Switch>
       </BrowserRouter>

@@ -7,12 +7,12 @@ export const saveData = (data) => db.collection('request').doc().set({
   ingreso: data.ingreso,
 });
 export const getData = () => db.collection('request').get().then((queryResults) => {
-    const userInfo = [];
-    queryResults.forEach((doc) => {
-      userInfo.push({
-        id: doc.id,
-        ...doc.data(),
-      });
+  const userInfo = [];
+  queryResults.forEach((doc) => {
+    userInfo.push({
+      id: doc.id,
+      ...doc.data(),
     });
-    return userInfo;
-}),
+  });
+  return userInfo;
+});
