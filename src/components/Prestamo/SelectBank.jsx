@@ -1,6 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import Image from 'react-bootstrap/Image';
+import CompareTable from './CompareTable';
 
 export function ButtonToSelect() {
   const history = useHistory();
@@ -28,6 +29,7 @@ const SelectBank = () => (
       </ul>
     </div>
     <h1 className="formulario">SelectBank</h1>
+    <CompareTable />
     <div>
       <ButtonToSelect />
     </div>
