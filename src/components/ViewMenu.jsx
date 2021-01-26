@@ -1,21 +1,46 @@
-import React from 'react';
-import { Nav, Navbar } from 'react-bootstrap';
+/* eslint-disable max-len */
+import React, { useState } from 'react';
+import Modal from 'react-bootstrap/Modal';
+import {
+  Nav, Navbar,
+} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const ViewMenu = () => (
-  <div>
-    <Navbar bg="light" expand="lg">
-      <Navbar.Brand href="#">Logo</Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
-          <Nav.Link href="#"><Link to="/" className="btn-navbar nav-link">Home</Link></Nav.Link>
-          <Nav.Link href="#servicios"><Link to="/servicios" className="btn-navbar nav-link">Servicios</Link></Nav.Link>
-          <Nav.Link href="#prestamos"><Link to="/prestamos" className="btn-navbar nav-link">Préstamos</Link></Nav.Link>
+const ViewMenu = () => {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  return (
+    <>
+      <Navbar expand="lg" bg="light" variant="light" id="top-nav" className="navegation">
+        <img src="" alt="juntas" />
+        <Nav className="mx-auto mt-2 mb-2">
+          <Nav.Link href="#"><Link to="/" className="btn-navbar nav-link">Inicio</Link></Nav.Link>
+          <Nav.Link href="#Servicios"><Link to="/Servicios" className="btn-navbar nav-link">Servicios</Link></Nav.Link>
+          <Nav.Link href="#Prestamos"><Link to="/prestamos" className="btn-navbar nav-link">Prestamos</Link></Nav.Link>
         </Nav>
-      </Navbar.Collapse>
-    </Navbar>
-  </div>
-);
+        <button className="navbar-toggler" type="button" onClick={handleShow}>
+          <span className="navbar-toggler-icon" />
+        </button>
+      </Navbar>
+
+      <Modal className="menuModal right fade menu" show={show} onHide={handleClose}>
+        <div className="menuModal modal-dialog position-fixed m-auto" role="document">
+          <div className="menuModal modal-content h-100">
+            <Modal.Header className="menuModal" closeButton />
+            <Modal.Body>
+              <Nav className="mx-auto mt-2 mb-2">
+                <Nav.Link href="#"><Link to="/" className="btn-navbar nav-link" onClick={handleClose}>Inicio</Link></Nav.Link>
+                <Nav.Link href="#Servicios"><Link to="/Servicios" className="btn-navbar nav-link" onClick={handleClose}>Servicios</Link></Nav.Link>
+                <Nav.Link href="#Prestamos"><Link to="/prestamos" className="btn-navbar nav-link" onClick={handleClose}>Prestamos</Link></Nav.Link>
+              </Nav>
+            </Modal.Body>
+          </div>
+        </div>
+      </Modal>
+    </>
+  );
+};
 
 export default ViewMenu;
