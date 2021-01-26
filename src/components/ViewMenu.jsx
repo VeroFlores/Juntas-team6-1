@@ -11,10 +11,11 @@ const ViewMenu = () => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
   return (
     <>
       <Navbar expand="lg" bg="light" variant="light" id="top-nav" className="navegation">
-        <img src="" alt="juntas" />
+        <img link="images/logo.png" alt="" />
         <Nav className="mx-auto mt-2 mb-2">
           <Nav.Link href="#"><Link to="/" className="btn-navbar nav-link">Inicio</Link></Nav.Link>
           <Nav.Link href="#Servicios"><Link to="/Servicios" className="btn-navbar nav-link">Servicios</Link></Nav.Link>
