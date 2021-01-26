@@ -11,7 +11,7 @@ const ViewMenu = () => (
         <Nav className="mr-auto">
           <Nav.Link href="#"><Link to="/" className="btn-navbar nav-link">Home</Link></Nav.Link>
           <Nav.Link href="#servicios"><Link to="/servicios" className="btn-navbar nav-link">Servicios</Link></Nav.Link>
-          <Nav.Link href="#prestamos"><Link to="/prestamos" className="btn-navbar nav-link">Préstamos</Link></Nav.Link>
+          <Nav.Link href="#dataClient"><Link to="/dataClient" className="btn-navbar nav-link">Préstamos</Link></Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

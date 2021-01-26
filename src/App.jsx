@@ -5,7 +5,6 @@ import './App.css';
 import Home from './components/Home';
 import Servicios from './components/Servicios';
 import ViewMenu from './components/ViewMenu';
-import Prestamos from './components/Prestamo/Prestamos';
 import DataClient from './components/Prestamo/DataClient';
 import SelectBank from './components/Prestamo/SelectBank';
 import Completed from './components/Prestamo/Completed';
@@ -23,9 +22,6 @@ function App() {
           </Route>
           <Route path="/servicios">
             <Servicios />
-          </Route>
-          <Route path="/prestamos">
-            <Prestamos />
           </Route>
           <Route path="/dataClient">
             <DataClient />
