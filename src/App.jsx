@@ -18,6 +18,11 @@ const App = () => {
     setStateForm([values]);
     saveData(values);
   };
+
+  const submitSecondForm = (info) => {
+    console.log(info);
+  };
+
   console.log(stateForm);
 
   // <-- Persistir Datos:
@@ -60,7 +65,7 @@ const App = () => {
         <ViewMenu />
         <Switch>
           <Route path="/" exact>
-            <Home handleSubmitForm={handleSubmitForm} />
+            <Home />
           </Route>
           <Route path="/servicios">
             <Servicios />
@@ -72,7 +77,8 @@ const App = () => {
             <SelectBank calculate={stateForm} formData={formData} />
           </Route>
           <Route path="/completed">
-            <Completed formData={formData} />
+            <Completed handleSubmitForm={submitSecondForm} formData={formData}/>
+
           </Route>
           <Route path="/Final">
             <Final formData={formData} />

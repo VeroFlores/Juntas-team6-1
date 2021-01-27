@@ -50,7 +50,8 @@ const FormSection = (props) => {
             value={values.moneda}
             onChange={handleChange}
           >
-            <option className="soles" value="soles">soles</option>
+            <option>Seleccionar</option>
+            <option value="soles">soles</option>
             <option value="dolares">dólares</option>
           </Form.Control>
         </Form.Group>
