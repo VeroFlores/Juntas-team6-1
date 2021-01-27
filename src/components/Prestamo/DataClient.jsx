@@ -9,7 +9,6 @@ export function ButtonToSelect() {
   function handleClick() {
     history.push('/selectBank');
   }
-
   return (
     <button type="submit" onClick={handleClick}>
       Empezar

@@ -31,7 +31,7 @@ const App = () => {
             <DataClient handleSubmitForm={handleSubmitForm} />
           </Route>
           <Route path="/selectBank">
-            <SelectBank />
+            <SelectBank calculate={stateForm} />
           </Route>
           <Route path="/completed">
             <Completed />
