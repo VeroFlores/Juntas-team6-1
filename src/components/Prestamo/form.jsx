@@ -23,7 +23,6 @@ const FormSection = (props) => {
   };
   const [values, setValues] = useState(initialStateValues);
   const handleChange = (e) => {
-    console.log('select', e);
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
   };
@@ -48,7 +47,7 @@ const FormSection = (props) => {
             value={values.moneda}
             onChange={handleChange}
           >
-            <option value="soles">soles</option>
+            <option className="soles" value="soles">soles</option>
             <option value="dolares">dólares</option>
           </Form.Control>
         </Form.Group>

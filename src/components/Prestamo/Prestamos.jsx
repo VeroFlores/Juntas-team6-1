@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React, { useState, useEffect } from 'react';
 import {
   Col, Row,
@@ -24,6 +25,18 @@ const Prestamos = (props) => {
   console.log(data);
   console.log(rate);
   console.log(calculate);
+
+  // const intereses = () => {
+  //   // monto inicial * totalTasa
+  // };
+  console.log(calculate[0]);
+  const montoTotalPagar = (amount, rates) => parseInt(amount, 10) + parseInt((amount * (rates / 100)), 10);
+
+  const cuota = (totalAmount, time) => parseInt((totalAmount / time), 10);
+  console.log(montoTotalPagar(5000, 18));
+  console.log(typeof (montoTotalPagar(5000, 18)));
+  console.log(cuota(montoTotalPagar(5000, 18), 18));
+
   return (
     <>
       <section id="listTasas" className="padded">
@@ -51,51 +64,44 @@ const Prestamos = (props) => {
             <Col xs="12"> </Col>
           </Row>
           <Row className="listTasasEntidad">
-            <Col xs="12 listBank">
-              {' '}
-              BBVA
-            </Col>
-            <Col> S/.280 </Col>
-            <Col> 14.94% </Col>
-            <Col> S/.11,040 </Col>
-            <Col xs="12 listBankHorario">
-              <p> Horario: Lun - Sab 8:00am a 8:00pm</p>
-            </Col>
-            <Col xs="12">
-              <div className="btnListTasas container  h-100">
-                <div className="d-flex h-100">
-                  <div className="align-self-center mx-auto">
-                    <button type="button" className="btn-prestamo-c btn btn-xm"> + </button>
-                    <button type="button" className="btn-prestamo-a btn btn-xm">Juntas recomienda</button>
-                    <button type="button" className="btn-prestamo-b  btn btn-xm">Lo quiero</button>
+            {
+            rate.map((ra) => (
+              <>
+                <Col xs="12 listBank">
+                  {ra.name}
+                </Col>
+                <Col>
+                  {' '}
+                  {cuota(montoTotalPagar(calculate[0].monto, ra.tasa), calculate[0].plazo)}
+                </Col>
+                <Col>
+                  {' '}
+                  {ra.tasa}
+                  %
+                </Col>
+                <Col>
+                  {' '}
+                  { montoTotalPagar(calculate[0].monto, ra.tasa)}
+                  {' '}
+                </Col>
+                <Col xs="12 listBankHorario">
+                  <p> Horario: Lun - Sab 8:00am a 8:00pm</p>
+                </Col>
+                <Col xs="12">
+                  <div className="btnListTasas container  h-100">
+                    <div className="d-flex h-100">
+                      <div className="align-self-center mx-auto">
+                        <button type="button" className="btn-prestamo-c btn btn-xm"> + </button>
+                        <button type="button" className="btn-prestamo-a btn btn-xm">Juntas recomienda</button>
+                        <button type="button" className="btn-prestamo-b  btn btn-xm">Lo quiero</button>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-              <hr />
-            </Col>
-
-            <Col xs="12 listBank">
-              {' '}
-              Banco de la Nación
-            </Col>
-            <Col> S/.280 </Col>
-            <Col> 14.94% </Col>
-            <Col> S/.11,040 </Col>
-            <Col xs="12 listBankHorario">
-              <p> Horario: Lun - Sab 8:00am a 8:00pm</p>
-            </Col>
-            <Col xs="12">
-              <div className="btnListTasas container  h-100">
-                <div className="d-flex h-100">
-                  <div className="align-self-center mx-auto">
-                    <button type="button" className="btn-prestamo-c btn btn-xm"> + </button>
-                    <button type="button" className="btn-prestamo-a btn btn-xm">Juntas recomienda</button>
-                    <button type="button" className="btn-prestamo-b  btn btn-xm">Lo quiero</button>
-                  </div>
-                </div>
-              </div>
-              <hr />
-            </Col>
+                  <hr />
+                </Col>
+              </>
+            ))
+}
           </Row>
         </div>
       </section>
