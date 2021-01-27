@@ -38,7 +38,8 @@ const SecondForm = (props) => {
     setValidated(true);
   };
 
-  const clickToRedirect = () => {
+  const clickToRedirect = (e) => {
+    e.preventDefault();
     console.log('completado');
   };
   //   const onSubmitValue = (event) => {

@@ -19,10 +19,6 @@ const App = () => {
     saveData(values);
   };
 
-  const submitSecondForm = (info) => {
-    console.log(info);
-  };
-
   console.log(stateForm);
 
   // <-- Persistir Datos:
@@ -58,7 +54,11 @@ const App = () => {
     }
   };
   // -- --->
-
+  const submitSecondForm = (info) => {
+    console.log('info', info);
+    const newformData = [...formData, ...info];
+    console.log(setformData(newformData));
+  };
   return (
     <div className="App">
       <BrowserRouter>
@@ -77,7 +77,7 @@ const App = () => {
             <SelectBank calculate={stateForm} formData={formData} />
           </Route>
           <Route path="/completed">
-            <Completed handleSubmitForm={submitSecondForm} formData={formData}/>
+            <Completed handleSubmitForm={submitSecondForm} formData={formData} />
 
           </Route>
           <Route path="/Final">
