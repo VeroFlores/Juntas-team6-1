@@ -17,14 +17,16 @@ const App = () => {
     setStateForm([values]);
     saveData(values);
   };
-  console.log(stateForm);
+  const submitSecondForm = (info) => {
+    console.log(info);
+  };
   return (
     <div className="App">
       <BrowserRouter>
         <ViewMenu />
         <Switch>
           <Route path="/" exact>
-            <Home handleSubmitForm={handleSubmitForm} />
+            <Home />
           </Route>
           <Route path="/servicios">
             <Servicios />
@@ -36,7 +38,7 @@ const App = () => {
             <SelectBank calculate={stateForm} />
           </Route>
           <Route path="/completed">
-            <Completed />
+            <Completed handleSubmitForm={submitSecondForm} />
           </Route>
           <Route path="/Final">
             <Final />
