@@ -12,6 +12,7 @@ const ViewMenu = () => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
   return (
     <>
       <Navbar expand="lg" bg="light" variant="light" id="top-nav" className="navegation">

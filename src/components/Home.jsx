@@ -9,3 +9,9 @@ const Home = () => (
 );
 
 export default Home;
+
+// Home.propTypes = {
+//   handleInputChange: PropTypes.func.isRequired,
+
+//   submitForm: PropTypes.func.isRequired,
+// };

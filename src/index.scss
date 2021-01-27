@@ -12,6 +12,9 @@ code {
     monospace;
 }
 
+.container{
+  max-width: 1440px;
+}
 $widthG: 100%;
 $height: 30px;
 $backgrounColorI: #ddd;
@@ -178,8 +181,8 @@ p.hola{
 }
 
 .padded{
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 90px;
+  padding-bottom: 90px;
 }
 
 // #containerRoot .col {
@@ -221,12 +224,12 @@ p.hola{
 .menuModal.modal-content {
 	border-radius: 0;
   border: 0 !important;
-  background-color: #a83a3a;
+  background-color: #C5165B;
 }
 
 .menuModal.modal-header {
 	border-bottom-color: #faf2f2ab;
-	background-color: #a83a3a;
+	background-color: #C5165B;
 }
 
 .menuModal.modal{
@@ -234,14 +237,14 @@ p.hola{
   top: -30px !important;
 }
 .menuModal.modal-body{
-  background-color: #a83a3a;
+  background-color: #C5165B;
 }
 .menuModal.modal-body a{
   color:white;
 }
 .menuModal.modal-header {
   border-bottom-color: #fafafa;
-  background-color:#a83a3a;
+  background-color: #C5165B;
   border-bottom: 0 !important;
   padding: 0.5rem 1rem;
 }
@@ -277,3 +280,59 @@ p.hola{
     display: none;
   }
 }
+
+.row.listTasasHeader {
+  background-color: #C5165B;
+  color: #ffff;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.row.listTasasEntidad {
+  background-color: #ffffff;
+  padding: 2rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+.btnListTasas  button{
+  margin-left: 1em;
+  margin-right: 1em;
+}
+.col-12.listBank {
+  padding: 1rem 1rem;
+}
+.col-12.listBankHorario {
+  padding: 1rem;
+}
+.btn.btn-xm.btn-prestamo-a {
+  background-color: #ffffff;
+  border-color: #C5165B;
+  color: #0a0a0a;
+  border-radius: 5rem;
+  margin: 0.5rem;
+  font-size: small;
+}
+.btn.btn-xm.btn-prestamo-b {
+  background-color: #C5165B;
+  border-color: #ac0e0ecf;
+  color: #ffffff;
+  border-radius: 5rem;
+  margin: 0.5rem;
+  font-size: small;
+}
+.btn.btn-xm.btn-prestamo-c {
+  font-size: 1rem;
+  font-weight: bolder;
+  background-color: #ffc107;
+  border-color: #ffc107;
+  color: #ffffff;
+  border-radius: 90px 90px;
+}
+#listTasas hr {
+  margin: 0.2rem;
+  padding: 0.5rem;
+}
+
