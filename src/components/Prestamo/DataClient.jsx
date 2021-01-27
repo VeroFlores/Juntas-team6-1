@@ -2,14 +2,13 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import Image from 'react-bootstrap/Image';
 import PropTypes from 'prop-types';
-import FormSection from './form';
+import FormSection from './Form';
 
 export function ButtonToSelect() {
   const history = useHistory();
   function handleClick() {
     history.push('/selectBank');
   }
-
   return (
     <button type="submit" onClick={handleClick}>
       Empezar
