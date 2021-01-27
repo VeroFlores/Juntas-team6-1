@@ -5,6 +5,7 @@ import {
   Nav, Navbar,
 } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import imagenes from './images.jpg';
 
 const ViewMenu = () => {
   const [show, setShow] = useState(false);
@@ -15,7 +16,7 @@ const ViewMenu = () => {
   return (
     <>
       <Navbar expand="lg" bg="light" variant="light" id="top-nav" className="navegation">
-        <img link="images/logo.png" alt="" />
+        <img src={imagenes} className="img" alt="juntas" />
         <Nav className="mx-auto mt-2 mb-2">
           <Nav.Link href="#"><Link to="/" className="btn-navbar nav-link">Inicio</Link></Nav.Link>
           <Nav.Link href="#Servicios"><Link to="/Servicios" className="btn-navbar nav-link">Servicios</Link></Nav.Link>

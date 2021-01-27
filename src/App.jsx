@@ -8,6 +8,8 @@ import DataClient from './components/Prestamo/DataClient';
 import SelectBank from './components/Prestamo/SelectBank';
 import Completed from './components/Prestamo/Completed';
 import { saveData } from './firebase/function';
+import Final from './components/Prestamo/Final';
+// import db from './firebase';
 
 const App = () => {
   const [stateForm, setStateForm] = useState([]);
@@ -35,6 +37,9 @@ const App = () => {
           </Route>
           <Route path="/completed">
             <Completed />
+          </Route>
+          <Route path="/Final">
+            <Final />
           </Route>
         </Switch>
       </BrowserRouter>
