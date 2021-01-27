@@ -23,12 +23,14 @@ $borderColorE: #4A4ADA;
 $colorE: #ddd;
 
 .containerAll{
-  margin-right: 8%;
+  width: 100%;
+  height: 2px;
+  margin-right: 10%;
   margin-bottom: 50%;
 }
 .container{
-  width: 250%;
-  margin-right: 7%;
+  width: 30%;
+  margin-right: 4%;
 }
 .progressBar{
   counter-reset:step;
@@ -36,6 +38,7 @@ $colorE: #ddd;
   color: white;
 }
 .progressBar li{
+  
   font-size: 40%;
   list-style-type:none;
   float: left;
@@ -140,6 +143,9 @@ p.hola{
   text-align: center;
   font-size: 85%; */
 }
+.colorOption{
+  border-color: #C5165B;
+}
 .referenc2{
   display: block;
   padding-bottom: black;
@@ -181,8 +187,8 @@ p.hola{
 }
 
 .padded{
-  padding-top: 90px;
-  padding-bottom: 90px;
+  padding-top: 2px;
+  padding-bottom: 8px;
 }
 
 // #containerRoot .col {

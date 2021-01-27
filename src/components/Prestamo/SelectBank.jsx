@@ -32,7 +32,6 @@ const SelectBank = (props) => {
           <li> Final</li>
         </ul>
       </div>
-      <h1 className="formulario">SelectBank</h1>
       <Prestamos calculate={calculate} />
       <div>
         <ButtonToSelect />

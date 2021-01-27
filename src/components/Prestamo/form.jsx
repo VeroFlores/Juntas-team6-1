@@ -42,12 +42,13 @@ const FormSection = (props) => {
         <Form.Group as={Col} md="4" controlId="exampleForm.ControlSelect1">
           <Form.Label>Moneda</Form.Label>
           <Form.Control
+            className="colorOption"
             as="select"
             name="moneda"
             value={values.moneda}
             onChange={handleChange}
           >
-            <option className="soles" value="soles">soles</option>
+            <option value="soles">soles</option>
             <option value="dolares">dólares</option>
           </Form.Control>
         </Form.Group>
