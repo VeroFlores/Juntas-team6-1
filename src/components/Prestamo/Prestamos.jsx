@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
 import React, { useState, useEffect } from 'react';
+// import { Redirect } from 'react-router-dom';
 import {
   Col, Row,
 } from 'react-bootstrap';
@@ -40,7 +41,7 @@ const Prestamos = (props) => {
   return (
     <>
       <section id="listTasas" className="padded">
-        <div className="container">
+        <div className="containerListBank">
           <Row className="listTasasHeader">
             <Col xs="12"> </Col>
             <Col>
@@ -65,42 +66,54 @@ const Prestamos = (props) => {
           </Row>
           <Row className="listTasasEntidad">
             {
-            rate.map((ra) => (
-              <>
-                <Col xs="12 listBank">
-                  {ra.name}
-                </Col>
-                <Col>
-                  {' '}
-                  {cuota(montoTotalPagar(calculate[0].monto, ra.tasa), calculate[0].plazo)}
-                </Col>
-                <Col>
-                  {' '}
-                  {ra.tasa}
-                  %
-                </Col>
-                <Col>
-                  {' '}
-                  { montoTotalPagar(calculate[0].monto, ra.tasa)}
-                  {' '}
-                </Col>
-                <Col xs="12 listBankHorario">
-                  <p> Horario: Lun - Sab 8:00am a 8:00pm</p>
-                </Col>
-                <Col xs="12">
-                  <div className="btnListTasas container  h-100">
-                    <div className="d-flex h-100">
-                      <div className="align-self-center mx-auto">
-                        <button type="button" className="btn-prestamo-c btn btn-xm"> + </button>
-                        <button type="button" className="btn-prestamo-a btn btn-xm">Juntas recomienda</button>
-                        <button type="button" className="btn-prestamo-b  btn btn-xm">Lo quiero</button>
-                      </div>
-                    </div>
-                  </div>
-                  <hr />
-                </Col>
-              </>
-            ))
+                calculate.length > 0
+                  ? rate.map((ra) => (
+                    <>
+                      <Col xs="12 listBank">
+                        {ra.name}
+                      </Col>
+                      <Col>
+                        {' '}
+                        {cuota(montoTotalPagar(calculate[0].monto, ra.tasa), calculate[0].plazo)}
+                      </Col>
+                      <Col>
+                        {' '}
+                        {ra.tasa}
+                        %
+                      </Col>
+                      <Col>
+                        {' '}
+                        { montoTotalPagar(calculate[0].monto, ra.tasa)}
+                        {' '}
+                      </Col>
+                      <Col xs="12 listBankHorario">
+                        <b> Horario: Lun - Sab 8:00am a 8:00pm </b>
+                      </Col>
+                      <Col xs="12">
+                        <div className="btnListTasas container  h-100">
+                          <div className="d-flex h-100">
+                            <div className="align-self-center mx-auto">
+                              <button type="button" className="btn-prestamo-c btn btn-xm"> + </button>
+                              {
+                  ra.recomendado === 'si'
+                    ? <b>Juntas recomienda </b>
+                    : <p> </p>
+
+                }
+                              {/* <button type="button" className="btn-prestamo-a btn btn-xm">Juntas recomienda</button> */}
+                              <button type="button" className="btn-prestamo-b  btn btn-xm">Lo quiero</button>
+                            </div>
+                          </div>
+                        </div>
+                        <hr />
+                      </Col>
+                    </>
+                  ))
+                  : (
+                    <Col xs="12">
+                      <b> No hay datos para comparar </b>
+                    </Col>
+                  )
 }
           </Row>
         </div>
