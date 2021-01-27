@@ -6,13 +6,23 @@ export const saveData = (data) => db.collection('request').doc().set({
   plazo: data.plazo,
   ingreso: data.ingreso,
 });
-export const getData = () => db.collection('request').get().then((queryResults) => {
-  const userInfo = [];
+export const getData = (callback) => db.collection('request').get().then((queryResults) => {
+  const arrayData = [];
   queryResults.forEach((doc) => {
-    userInfo.push({
+    arrayData.push({
       id: doc.id,
       ...doc.data(),
     });
   });
-  return userInfo;
+  callback(arrayData);
+});
+export const getRate = (callback) => db.collection('rates').get().then((queryResults) => {
+  const arrayData = [];
+  queryResults.forEach((doc) => {
+    arrayData.push({
+      id: doc.id,
+      ...doc.data(),
+    });
+  });
+  callback(arrayData);
 });
