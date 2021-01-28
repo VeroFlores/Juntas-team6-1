@@ -4,8 +4,7 @@ import Image from 'react-bootstrap/Image';
 import Summary from './Summary';
 
 const Final = (props) => {
-  const { formData, formInfo } = props;
-
+  const { formData, formInfo, formBank } = props;
   return (
     <>
       <section id="prestamos" className="padded">
@@ -37,4 +36,5 @@ export default Final;
 Final.propTypes = {
   formData: PropTypes.shape.isRequired,
   formInfo: PropTypes.shape.isRequired,
+  formBank: PropTypes.shape.isRequired,
 };
