@@ -97,7 +97,6 @@ const Prestamos = (props) => {
                   ra.recomendado === 'si'
                     ? <b>Juntas recomienda </b>
                     : <p> </p>
-
                 }
                               <button type="button" className="btn-prestamo-b  btn btn-xm">Lo quiero</button>
                             </div>
