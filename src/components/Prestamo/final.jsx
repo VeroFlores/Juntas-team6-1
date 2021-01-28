@@ -5,8 +5,7 @@ import Summary from './Summary';
 
 const Final = (props) => {
   const { formData, formInfo } = props;
-  console.log('Paso 4  - Traer datos del formulario Paso 1:', formData);
-  console.log('Paso 4  - Traer datos del formulario Paso 3:', formInfo);
+
   return (
     <>
       <section id="prestamos" className="padded">
@@ -30,7 +29,7 @@ const Final = (props) => {
           <li className="active"> Final</li>
         </ul>
       </div>
-      <Summary />
+      <Summary formData={formData} formInfo={formInfo} />
     </>
   );
 };
