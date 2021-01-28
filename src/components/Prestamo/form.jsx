@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+/* eslint-disable max-len */
+/* eslint-disable no-unused-vars */
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import {
   Button, Col, Form,
 } from 'react-bootstrap';
 
 const FormSection = (props) => {
-  const { handleSubmitForm } = props;
+  const { handleSubmitForm, addformData } = props;
   const [validated, setValidated] = useState(false);
   const handleSubmit = (event) => {
     const form = event.currentTarget;
@@ -21,6 +23,7 @@ const FormSection = (props) => {
     plazo: '',
     ingreso: '',
   };
+
   const [values, setValues] = useState(initialStateValues);
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -48,6 +51,7 @@ const FormSection = (props) => {
             value={values.moneda}
             onChange={handleChange}
           >
+            <option>Seleccionar</option>
             <option value="soles">soles</option>
             <option value="dolares">dólares</option>
           </Form.Control>
@@ -101,8 +105,14 @@ const FormSection = (props) => {
           />
         </Form.Group>
         <Form.Group as={Col} md="4">
-          <Button
+          {/* <Button
             type="submit"
+          >
+            Comparar
+          </Button> */}
+          <Button
+            type="button"
+            onClick={() => addformData(values.monto, values.plazo, values.ingreso)}
           >
             Comparar
           </Button>
@@ -115,4 +125,5 @@ export default FormSection;
 FormSection.propTypes = {
   // handleInputChange: PropTypes.func.isRequired,
   handleSubmitForm: PropTypes.func.isRequired,
+  addformData: PropTypes.func.isRequired,
 };

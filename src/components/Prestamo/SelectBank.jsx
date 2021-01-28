@@ -17,7 +17,9 @@ export function ButtonToSelect() {
   );
 }
 const SelectBank = (props) => {
-  const { calculate } = props;
+  const { calculate, formData } = props;
+  console.log('Paso 2  - Traer datos del formulario Paso 1:', formData);
+  console.log(calculate);
   return (
     <>
       <section id="prestamos" className="padded">
@@ -32,7 +34,8 @@ const SelectBank = (props) => {
           <li> Final</li>
         </ul>
       </div>
-      <Prestamos calculate={calculate} />
+      <h1 className="formulario">SelectBank</h1>
+      <Prestamos calculate={calculate} formData={formData} />
       <div>
         <ButtonToSelect />
       </div>
@@ -43,4 +46,5 @@ const SelectBank = (props) => {
 export default SelectBank;
 SelectBank.propTypes = {
   calculate: PropTypes.shape.isRequired,
+  formData: PropTypes.shape.isRequired,
 };

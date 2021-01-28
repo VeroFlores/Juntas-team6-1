@@ -15,6 +15,7 @@ code {
 .container{
   max-width: 1440px;
 }
+
 $widthG: 100%;
 $height: 30px;
 $backgrounColorI: #ddd;
@@ -191,10 +192,10 @@ p.hola{
   padding-bottom: 8px;
 }
 
-// #containerRoot .col {
-//   padding-left: 0px;
-//   padding-right: 0px;
-// }
+.container .col {
+  padding-left: 0px;
+  padding-right: 0px;
+}
 
 // #containerRoot {
 //   height: 100vh;
@@ -340,5 +341,8 @@ p.hola{
 #listTasas hr {
   margin: 0.2rem;
   padding: 0.5rem;
+}
+.containerListBank {
+  padding: 1rem;
 }
 
