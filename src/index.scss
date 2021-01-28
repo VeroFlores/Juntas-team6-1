@@ -14,7 +14,6 @@ $colorAmarillo:#ffc107;
 }
 @mixin bootsPrestamo {
   border-radius: 5rem;
-  margin: 0.5rem;
   font-size: small;
 }
 @mixin formulario {
@@ -103,7 +102,6 @@ code {
                   color: white;
                   @include estilosProgressBar();
                 }
-//-------------------------------------------- Fin de Progress Bar -------------------------------------------- 
 // [no se vean en verde todos los circulos]
                   .progressBar li.active:before{
                     @include estilosProgressBar();
@@ -111,6 +109,7 @@ code {
                     background-color:$backgrounColorE;
                   }
 }
+//-------------------------------------------- Fin de Progress Bar -------------------------------------------- 
 //union: color del texto + estilos de la linea
 /* .progressBar li.active + li:after{
   background-color: $backgrounColorE;
@@ -330,12 +329,53 @@ p.hola{
   color: #0a0a0a;
   @include bootsPrestamo();
 }
-.btn.btn-xm.btn-prestamo-b {
+/* .btn.btn-xm.btn-prestamo-b {
+  background-color:$colorRosa;
+  border-color: #ac0e0ecf;
+  color: #ffffff;
+  @include bootsPrestamo();
+} */
+//-------------------------------------------- Inicio Botones Home -------------------------------------------- 
+@mixin colores {
+  border-radius: 14px;
+  align-content: center;
+  border-color: #C5165B;
+  width: 200px;
+  height: 30px;
+}
+@mixin otrosColores {
+  color: white;
+  background-color: #C5165B;
+}
+.conocerMas{
+  margin-top: 5px;
+  background-color: white;
+  color: #C5165B;
+  @include colores();
+}
+.conocerMasUnirme{
+  @include colores();
+  @include otrosColores();
+}
+.acceder{
+  font-size: small;
+  margin-left: 80px;
+  border-radius: 14px;
+  align-content: center;
+  border-color: #C5165B;
+  @include otrosColores();
+  width: 80px;
+  height: 25px;
+}
+
+.btn.btn-xm.btn-prestamo-b1 {
+  margin-left: 25%;
   background-color:$colorRosa;
   border-color: #ac0e0ecf;
   color: #ffffff;
   @include bootsPrestamo();
 }
+//-------------------------------------------- Fin Botones Home -------------------------------------------- 
 .btn.btn-xm.btn-prestamo-c {
   font-size: 1rem;
   font-weight: bolder;
@@ -351,3 +391,23 @@ p.hola{
 .containerListBank {
   padding: 1rem;
 }
+//-------------------------------------------- Inicio Botones Home -------------------------------------------- 
+.goo{
+  width: 78%;
+  height: 37%;
+}
+.inputInicio{
+  margin-top: 11px;
+  width: 55%;
+  height: 16%;
+}
+.contraseñaEmail{
+  margin-top: 10px;
+  color: #C5165B;
+}
+.contraseñaOlvidada{
+  margin-top: 15px;
+  color:blue;
+  margin-bottom: 10px;
+}
+//-------------------------------------------- Fin Botones Home -------------------------------------------- 

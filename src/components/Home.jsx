@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'react-bootstrap/Image';
 import iconos from '../images/iconosMas.jpg';
 import bancos from '../images/groupBank.png';
-import imagenes from '../images/images.jpg';
+import juntas from '../images/logoJuntas.jpg';
 
 const Home = () => (
   <>
@@ -33,7 +33,7 @@ const Home = () => (
           Beneficios de ser parte de juntas
         </p>
         <img src={bancos} className="btn-log-outBank" alt="logout" />
-        <img src={imagenes} className="img" alt="juntas" />
+        <img src={juntas} className="img" alt="juntas" />
         <p>
           ---------------------------------
         </p>
