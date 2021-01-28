@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Image from 'react-bootstrap/Image';
 import { useHistory } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import SecondForm from './SecondForm';
 
 export function ButtonToSelect() {
   const history = useHistory();
@@ -16,8 +18,10 @@ export function ButtonToSelect() {
   );
 }
 const Completed = (props) => {
-  const { formData } = props;
+
+  const { handleSubmitForm, formData } = props;
   console.log('Paso 3  - Traer datos del formulario Paso 1:', formData);
+
   return (
     <>
       <section id="prestamos" className="padded">
@@ -33,14 +37,18 @@ const Completed = (props) => {
         </ul>
       </div>
       <h1>Completado</h1>
+
+      <SecondForm handleSubmitForm={handleSubmitForm} />
+
       <div>
         <ButtonToSelect />
       </div>
     </>
   );
 };
-
 export default Completed;
 Completed.propTypes = {
+  // handleInputChange: PropTypes.func.isRequired,
+  handleSubmitForm: PropTypes.func.isRequired,
   formData: PropTypes.shape.isRequired,
 };
