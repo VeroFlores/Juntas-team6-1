@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Image from 'react-bootstrap/Image';
+import Summary from './Summary';
 
 const Final = (props) => {
   const { formData } = props;
@@ -20,6 +21,7 @@ const Final = (props) => {
           <li className="active"> Final</li>
         </ul>
       </div>
+      <Summary />
     </>
   );
 };
