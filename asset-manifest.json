@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Juntas-team6/static/css/main.b5d034c4.chunk.css",
-    "main.js": "/Juntas-team6/static/js/main.40455223.chunk.js",
-    "main.js.map": "/Juntas-team6/static/js/main.40455223.chunk.js.map",
+    "main.js": "/Juntas-team6/static/js/main.f3268940.chunk.js",
+    "main.js.map": "/Juntas-team6/static/js/main.f3268940.chunk.js.map",
     "runtime-main.js": "/Juntas-team6/static/js/runtime-main.cdbdd7bc.js",
     "runtime-main.js.map": "/Juntas-team6/static/js/runtime-main.cdbdd7bc.js.map",
     "static/css/2.150d169a.chunk.css": "/Juntas-team6/static/css/2.150d169a.chunk.css",
@@ -24,6 +24,6 @@
     "static/css/2.150d169a.chunk.css",
     "static/js/2.6ab581c5.chunk.js",
     "static/css/main.b5d034c4.chunk.css",
-    "static/js/main.40455223.chunk.js"
+    "static/js/main.f3268940.chunk.js"
   ]
 }
