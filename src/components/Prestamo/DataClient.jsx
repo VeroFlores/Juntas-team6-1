@@ -26,7 +26,8 @@ const DataClient = (props) => {
         </div>
         <div className="referenc2">
           <p className="hola">
-            Te recomendamos elegir el préstamo que más te convenga.
+            Accede a los beneficios de ser parte de la comunidad Juntas.
+            Te recomendamos el préstamo que más te conviene.
           </p>
         </div>
       </section>
@@ -34,9 +35,9 @@ const DataClient = (props) => {
         <div className="container">
           <ul className="progressBar">
             <li className="active"> Coloca tus datos</li>
-            <li> Selecciona el banco/tasa</li>
-            <li> Proceso Exitoso</li>
-            <li> Final</li>
+            <li> Compara y elige</li>
+            <li> Solicita</li>
+            <li> Confirma y ¡listo!</li>
           </ul>
         </div>
       </div>
