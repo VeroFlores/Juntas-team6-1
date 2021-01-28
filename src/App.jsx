@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Home from './components/Home';
-import Servicios from './components/Servicios';
+import Nosotros from './components/Nosotros';
 import ViewMenu from './components/ViewMenu';
 import DataClient from './components/Prestamo/DataClient';
 import SelectBank from './components/Prestamo/SelectBank';
@@ -10,6 +10,8 @@ import Completed from './components/Prestamo/Completed';
 import { saveData } from './firebase/function';
 import Final from './components/Prestamo/Final';
 import Login from './components/Login';
+import Comunidad from './components/Comunidad';
+import Contacto from './components/Contacto';
 
 // import db from './firebase';
 
@@ -115,8 +117,17 @@ const App = () => {
           <Route path="/" exact>
             <Home />
           </Route>
-          <Route path="/Servicios">
-            <Servicios />
+          <Route path="/Home">
+            <Home />
+          </Route>
+          <Route path="/Nosotros">
+            <Nosotros />
+          </Route>
+          <Route path="/Comunidad">
+            <Comunidad />
+          </Route>
+          <Route path="/Contacto">
+            <Contacto />
           </Route>
           <Route path="/dataClient">
             <DataClient handleSubmitForm={handleSubmitForm} addformData={addformData} />

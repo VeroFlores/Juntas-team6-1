@@ -9,7 +9,7 @@ const Home = () => (
     <section id="home" className="padded">
       <Image src="https://assets.entrepreneur.com/content/3x2/2000/20180821212333-emprendeora.jpeg?width=700&crop=2:1.jpg" fluid />
       <div className="referenc2">
-        <p className="hola">
+        <p className="hola2">
           Somos una plataforma virtual que busca el
           empoderamiento femenino mediante el crecimiento
           economico de las mujeres emprendedoras.
@@ -33,7 +33,7 @@ const Home = () => (
           Beneficios de ser parte de juntas
         </p>
         <img src={bancos} className="btn-log-outBank" alt="logout" />
-        <img src={juntas} className="img" alt="juntas" />
+        <img src={juntas} className="img2" alt="juntas" />
         <p>
           ---------------------------------
         </p>

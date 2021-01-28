@@ -12,69 +12,71 @@ const Summary = (props) => {
   const cuota = (totalAmount, time) => parseInt((totalAmount / time), 10);
   return (
     <>
-      <section className="summary-section">
-        <h1>Datos de Solicitud</h1>
-        <div>
-          <p>Datos personales</p>
+      <div className="daniForm2">
+        <section className="summary-section">
+          <h1>-----</h1>
           <div>
-            <p>
-              Nombres y apellidos:
-              {formInfo[0].name}
-            </p>
-            <p>
-              Documento de identidad:
-              {formInfo[0].dni}
-            </p>
-            <p>Correo :</p>
-            <p>
-              Celular:
-              {formInfo[0].celular}
-            </p>
-            <p>
-              Operador:
-              {formInfo[0].operador}
-            </p>
-            <p>
-              Rubro:
-              {formInfo[0].rubro}
-            </p>
-            <p>RUC:</p>
+            <p>Datos personales</p>
+            <div>
+              <p>
+                Nombres y apellidos:
+                {formInfo[0].name}
+              </p>
+              <p>
+                Documento de identidad:
+                {formInfo[0].dni}
+              </p>
+              <p>Correo :</p>
+              <p>
+                Celular:
+                {formInfo[0].celular}
+              </p>
+              <p>
+                Operador:
+                {formInfo[0].operador}
+              </p>
+              <p>
+                Rubro:
+                {formInfo[0].rubro}
+              </p>
+              <p>RUC:</p>
+            </div>
           </div>
-        </div>
-        <div>
-          <p>Datos personales</p>
           <div>
-            <p>
-              Monto:
-              {formData[0].monto}
-            </p>
-            <p>
-              Nro. Cuotas:
-              {formData[0].plazo}
-            </p>
-            <p>
-              Fecha de pago:
-              {formInfo[0].fechaPago}
-            </p>
-            <p>
-              Valor de Cuota:
-              {cuota(montoTotalPagar(formData[0].monto, 14.94), formData[0].plazo)}
-            </p>
+            <p>Datos personales</p>
+            <div>
+              <p>
+                Monto:
+                {formData[0].monto}
+              </p>
+              <p>
+                Nro. Cuotas:
+                {formData[0].plazo}
+              </p>
+              <p>
+                Fecha de pago:
+                {formInfo[0].fechaPago}
+              </p>
+              <p>
+                Valor de Cuota:
+                {cuota(montoTotalPagar(formData[0].monto, 14.94), formData[0].plazo)}
+              </p>
+            </div>
           </div>
-        </div>
-        <div>
-          <p>Datos para el abono</p>
           <div>
-            <p>Cuenta :  BBVA</p>
-            <p>
-              Nro. de cuenta:
-              {formInfo[0].cuenta}
-            </p>
+            <p>Datos para el abono</p>
+            <div>
+              <p>Cuenta :  BBVA</p>
+              <p>
+                Nro. de cuenta:
+                {formInfo[0].cuenta}
+              </p>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+        <button type="button" className="conocerMasUnirme">Enviar Solicitud</button>
+      </div>
     </>
-
   );
 };
 export default Summary;

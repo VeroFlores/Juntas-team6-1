@@ -10,7 +10,7 @@ const IniciarSesion = () => {
     history.push('./dataClient');
   }
   return (
-    <Button type="submit" onClick={handleClick} className="btn-prestamo-b1  btn btn-xm">
+    <Button type="submit" onClick={handleClick} className="btn-prestamo-b12  btn btn-xm">
       Iniciar Sesión
     </Button>
   );

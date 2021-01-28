@@ -4,7 +4,7 @@ import {
   Button, Col, Form,
 } from 'react-bootstrap';
 import Modal from 'react-bootstrap/Modal';
-import imagenes from '../images.jpg';
+import juntas from '../../images/logoJuntas.jpg';
 // import { useHistory } from 'react-router-dom';
 
 const SecondForm = (props) => {
@@ -27,7 +27,6 @@ const SecondForm = (props) => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
   };
-  console.log(values);
   const handleSubmit = (event) => {
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
@@ -46,12 +45,11 @@ const SecondForm = (props) => {
     console.log('completado');
     setSmModalVerificate(false);
   };
-    //   const onSubmitValue = (event) => {
-    //     event.preventDefault();
+  //   const onSubmitValue = (event) => {
+  //     event.preventDefault();
 
   //     console.log('click');
   //   };
-
   return (
     <>
       <Form action="post" noValidate validated={validated} onSubmit={handleSubmit}>
@@ -200,9 +198,8 @@ const SecondForm = (props) => {
             feedback="Debes de estar de acuerdo ,antes de enviar."
           />
         </Form.Group>
-        <Button type="submit">Submit form</Button>
+        <Button type="submit" onClick={clickToRedirect}>Submit form</Button>
       </Form>
-
       <Modal
         size="sm"
         show={smModalVerificate}
@@ -210,7 +207,7 @@ const SecondForm = (props) => {
         aria-labelledby="example-modal-sizes-title-sm"
       >
         <Modal.Header closeButton>
-          <img src={imagenes} className="img" alt="juntas" />
+          <img src={juntas} className="img" alt="juntas" />
         </Modal.Header>
         <Modal.Body>
           <p>Por favor verifica que tus datos en la solicitud siguiente sean correctos.</p>
