@@ -57,11 +57,31 @@ const App = () => {
     }
   };
   // -- --->
+  const formInfoLocalStorage = JSON.parse(localStorage.getItem('formInfo') || '[]');
+  const [formInfo, setformInfo] = useState(formInfoLocalStorage);
+
+  useEffect(() => {
+    localStorage.setItem('formInfo', JSON.stringify(formInfo));
+  }, [formInfo]);
+
   const submitSecondForm = (info) => {
-    console.log('info', info);
-    const newformData = [...formData, info];
-    console.log(newformData);
-    setformData(newformData);
+    if (info.length === 0) {
+      const newformInfo = [info];
+      console.log(newformInfo);
+      setformInfo(newformInfo);
+    } else {
+      const newformInfo = [...formInfo];
+      newformInfo.splice(0, formInfo.length);
+      const newformInfox = [info];
+      console.log(newformInfox);
+      setformInfo(newformInfox);
+    }
+    // const newformDatax = [...formData];
+    // newformDatax.splice(0, 1);
+    // console.log('info', info);
+    // const newformData = [...formData, info];
+    // console.log(newformData);
+    // setformData(newformData);
   };
   return (
     <div className="App">
@@ -84,7 +104,7 @@ const App = () => {
             <Completed handleSubmitForm={submitSecondForm} formData={formData} />
           </Route>
           <Route path="/Final">
-            <Final formData={formData} />
+            <Final formData={formData} formInfo={formInfo} />
           </Route>
         </Switch>
       </BrowserRouter>
