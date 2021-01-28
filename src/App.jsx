@@ -9,6 +9,7 @@ import SelectBank from './components/Prestamo/SelectBank';
 import Completed from './components/Prestamo/Completed';
 import { saveData } from './firebase/function';
 import Final from './components/Prestamo/Final';
+import Login from './components/Login';
 
 // import db from './firebase';
 
@@ -114,7 +115,7 @@ const App = () => {
           <Route path="/" exact>
             <Home />
           </Route>
-          <Route path="/servicios">
+          <Route path="/Servicios">
             <Servicios />
           </Route>
           <Route path="/dataClient">
@@ -128,6 +129,9 @@ const App = () => {
           </Route>
           <Route path="/Final">
             <Final formData={formData} formInfo={formInfo} formBank={formBank} />
+          </Route>
+          <Route path="/Login">
+            <Login />
           </Route>
         </Switch>
       </BrowserRouter>

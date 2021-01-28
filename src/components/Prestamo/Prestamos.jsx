@@ -96,7 +96,6 @@ const Prestamos = (props) => {
                   ra.recomendado === 'si'
                     ? <b>Juntas recomienda </b>
                     : <p> </p>
-
                 }
                               <button type="button" className="btn-prestamo-b  btn btn-xm" onClick={() => addBank(ra.name, ra.tasa)}>Lo quiero</button>
                             </div>

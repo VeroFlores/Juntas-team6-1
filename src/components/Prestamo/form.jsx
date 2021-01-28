@@ -45,6 +45,7 @@ const FormSection = (props) => {
         <Form.Group as={Col} md="4" controlId="exampleForm.ControlSelect1">
           <Form.Label>Moneda</Form.Label>
           <Form.Control
+            className="colorOption"
             as="select"
             name="moneda"
             value={values.moneda}

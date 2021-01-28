@@ -1,3 +1,26 @@
+//-------------------------------------------- Variables, mixin, include -------------------------------------------- 
+$widthG: 100%;
+$height: 30px;
+$backgrounColorI: #ddd;
+$backgrounColorE: #4A4ADA;
+$borderColorE: #4A4ADA;
+$colorE: #ddd;
+$colorRosa:#C5165B;
+$colorAmarillo:#ffc107;
+
+@mixin estilosProgressBar {
+  font-size: 100%;
+  text-align: center;
+}
+@mixin bootsPrestamo {
+  border-radius: 5rem;
+  font-size: small;
+}
+@mixin formulario {
+  display: block;
+  position: relative;
+  text-align: center;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -12,103 +35,91 @@ code {
     monospace;
 }
 
+//-------------------------------------------- Inicio de Progress Bar --------------------------------------------   
 .container{
   max-width: 1440px;
-}
 
-$widthG: 100%;
-$height: 30px;
-$backgrounColorI: #ddd;
-$backgrounColorE: #4A4ADA;
-$borderColorE: #4A4ADA;
-$colorE: #ddd;
-
-.containerAll{
-  margin-right: 8%;
-  margin-bottom: 50%;
-}
-.container{
-  width: 250%;
-  margin-right: 7%;
-}
-.progressBar{
-  counter-reset:step;
-  font-size: 80%;
-  color: white;
-}
-.progressBar li{
-  font-size: 40%;
-  list-style-type:none;
-  float: left;
-  width: 25%;
-  padding: 10%;  
-  position:relative;
-  text-align: center;
-  font-size: 11px;
-  color:$backgrounColorE
-}
+  .containerAll{
+    width: 100%;
+    height: 2px;
+    margin-right: 10%;
+    margin-bottom: 50%;
+  }
+    .container{
+      width: 30%;
+      margin-right: 4%;
+    }
+      .progressBar{
+        counter-reset:step;
+        font-size: 80%;
+        color: white;
+      }
+        .progressBar li{
+          font-size: 40%;
+          list-style-type:none;
+          float: left;
+          width: 25%;
+          padding: 10%;  
+          position:relative;
+          text-align: center;
+          font-size: 11px;
+          color:$backgrounColorE
+        }
 //estilos del circulo
-.progressBar li:before{
-  padding: 8%; 
-  font-size: 140%;
-  content: counter(step);
-  counter-increment: step;
-  width: $height;
-  line-height:$height;
-  border:1px solid $backgrounColorI;
-  display: block;
-  text-align: center;
-  margin: 0 auto 5px auto;
-  border-radius: 50%;
-  background-color: white;
-  text-align: center;
-}
+          .progressBar li:before{
+            padding: 8%; 
+            font-size: 140%;
+            content: counter(step);
+            counter-increment: step;
+            width: $height;
+            line-height:$height;
+            border:1px solid $backgrounColorI;
+            display: block;
+            text-align: center;
+            margin: 0 auto 5px auto;
+            border-radius: 50%;
+            background-color: white;
+          }
 //estilos para la linea 
-.progressBar li:after{
-  content:'';
-  position: absolute;
-  width: $widthG;
-  height: 1px;
-  background-color: $backgrounColorI;
-  top: 38px;
-  left: -50%;
-  z-index: -1;
-  text-align: center;
-  font: bold;
+            .progressBar li:after{
+              content:'';
+              position: absolute;
+              width: $widthG;
+              height: 1px;
+              background-color: $backgrounColorI;
+              top: 38px;
+              left: -50%;
+              z-index: -1;
+              text-align: center;
+              font: bold;
+            }
+
+              .progressBar li:first-child:after{
+                content:none;
+              }
+//color del texto de cada paso
+                .progressBar li.active{
+                  color: white;
+                  @include estilosProgressBar();
+                }
+// [no se vean en verde todos los circulos]
+                  .progressBar li.active:before{
+                    @include estilosProgressBar();
+                    font: bold;
+                    background-color:$backgrounColorE;
+                  }
 }
-.progressBar li:first-child:after{
-  content:none;
-  font: bold;
-}
-//color del texto dataClient
-.progressBar li.active{
-   color: white;
-  font-size: 100%;
-  text-align: center;
-  font: bold;
-}
-// no se vean en verde todos los circulos
-.progressBar li.active:before{
-  /* border-color:$colorE; */
-  font-size: 100%;
-  text-align: center;
-  font: bold;
-  background-color:$backgrounColorE;
-}
+//-------------------------------------------- Fin de Progress Bar -------------------------------------------- 
 //union: color del texto + estilos de la linea
 /* .progressBar li.active + li:after{
   background-color: $backgrounColorE;
 } */
 h1 .formulario{
-  display: block;
-  position: relative;
-  text-align: center;
+  @include formulario();
   margin-top: 20%;
 }
 .formulario{
-  display: block;
-  position: relative;
-  text-align: center;
+  @include formulario();
   margin-top: 10%;
 }
 .referenc{
@@ -140,6 +151,9 @@ p.hola{
   font-family: Roboto;
   text-align: center;
   font-size: 85%; */
+}
+.colorOption{
+  border-color: #C5165B;
 }
 .referenc2{
   display: block;
@@ -182,8 +196,8 @@ p.hola{
 }
 
 .padded{
-  padding-top: 90px;
-  padding-bottom: 90px;
+  padding-top: 2px;
+  padding-bottom: 8px;
 }
 
 .container .col {
@@ -225,12 +239,12 @@ p.hola{
 .menuModal.modal-content {
 	border-radius: 0;
   border: 0 !important;
-  background-color: #C5165B;
+  background-color:$colorRosa;
 }
 
 .menuModal.modal-header {
 	border-bottom-color: #faf2f2ab;
-	background-color: #C5165B;
+	background-color:$colorRosa;
 }
 
 .menuModal.modal{
@@ -238,14 +252,14 @@ p.hola{
   top: -30px !important;
 }
 .menuModal.modal-body{
-  background-color: #C5165B;
+  background-color:$colorRosa;
 }
 .menuModal.modal-body a{
   color:white;
 }
 .menuModal.modal-header {
   border-bottom-color: #fafafa;
-  background-color: #C5165B;
+  background-color:$colorRosa;
   border-bottom: 0 !important;
   padding: 0.5rem 1rem;
 }
@@ -283,7 +297,7 @@ p.hola{
 }
 
 .row.listTasasHeader {
-  background-color: #C5165B;
+  background-color:$colorRosa;
   color: #ffff;
   padding: 1rem;
   font-size: 1rem;
@@ -308,27 +322,65 @@ p.hola{
 .col-12.listBankHorario {
   padding: 1rem;
 }
+
 .btn.btn-xm.btn-prestamo-a {
   background-color: #ffffff;
-  border-color: #C5165B;
+  border-color: $colorRosa;
   color: #0a0a0a;
-  border-radius: 5rem;
-  margin: 0.5rem;
-  font-size: small;
+  @include bootsPrestamo();
 }
-.btn.btn-xm.btn-prestamo-b {
-  background-color: #C5165B;
+/* .btn.btn-xm.btn-prestamo-b {
+  background-color:$colorRosa;
   border-color: #ac0e0ecf;
   color: #ffffff;
-  border-radius: 5rem;
-  margin: 0.5rem;
-  font-size: small;
+  @include bootsPrestamo();
+} */
+//-------------------------------------------- Inicio Botones Home -------------------------------------------- 
+@mixin colores {
+  border-radius: 14px;
+  align-content: center;
+  border-color: #C5165B;
+  width: 200px;
+  height: 30px;
 }
+@mixin otrosColores {
+  color: white;
+  background-color: #C5165B;
+}
+.conocerMas{
+  margin-top: 5px;
+  background-color: white;
+  color: #C5165B;
+  @include colores();
+}
+.conocerMasUnirme{
+  @include colores();
+  @include otrosColores();
+}
+.acceder{
+  font-size: small;
+  margin-left: 80px;
+  border-radius: 14px;
+  align-content: center;
+  border-color: #C5165B;
+  @include otrosColores();
+  width: 80px;
+  height: 25px;
+}
+
+.btn.btn-xm.btn-prestamo-b1 {
+  margin-left: 25%;
+  background-color:$colorRosa;
+  border-color: #ac0e0ecf;
+  color: #ffffff;
+  @include bootsPrestamo();
+}
+//-------------------------------------------- Fin Botones Home -------------------------------------------- 
 .btn.btn-xm.btn-prestamo-c {
   font-size: 1rem;
   font-weight: bolder;
-  background-color: #ffc107;
-  border-color: #ffc107;
+  background-color:$colorAmarillo;
+  border-color:$colorAmarillo;
   color: #ffffff;
   border-radius: 90px 90px;
 }
@@ -339,4 +391,23 @@ p.hola{
 .containerListBank {
   padding: 1rem;
 }
-
+//-------------------------------------------- Inicio Botones Home -------------------------------------------- 
+.goo{
+  width: 78%;
+  height: 37%;
+}
+.inputInicio{
+  margin-top: 11px;
+  width: 55%;
+  height: 16%;
+}
+.contraseñaEmail{
+  margin-top: 10px;
+  color: #C5165B;
+}
+.contraseñaOlvidada{
+  margin-top: 15px;
+  color:blue;
+  margin-bottom: 10px;
+}
+//-------------------------------------------- Fin Botones Home -------------------------------------------- 

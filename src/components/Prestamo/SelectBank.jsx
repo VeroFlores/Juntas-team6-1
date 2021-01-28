@@ -24,7 +24,15 @@ const SelectBank = (props) => {
     <>
       <section id="prestamos" className="padded">
         <Image src="https://susociodenegocios.com/wp-content/uploads/2019/02/mujer-duena-de-su-negocio.jpg" fluid />
-        <h1> Prestamos</h1>
+        <div className="referenc">
+          <p> Comparador de Prestamos</p>
+          <p> ----------------------- </p>
+          <p className="hola">
+            Las Tasas de interés son exclusivas de la
+            comunidad Juntas. te recomendamos el prestamo
+            que más de conviene.
+          </p>
+        </div>
       </section>
       <div className="container">
         <ul className="progressBar">
