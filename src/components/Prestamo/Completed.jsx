@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Image from 'react-bootstrap/Image';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -18,7 +17,6 @@ export function ButtonToSelect() {
   );
 }
 const Completed = (props) => {
-
   const { handleSubmitForm, formData } = props;
   console.log('Paso 3  - Traer datos del formulario Paso 1:', formData);
 
