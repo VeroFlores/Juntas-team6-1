@@ -111,7 +111,7 @@ const FormSection = (props) => {
           </Button> */}
           <Button
             type="button"
-            onClick={() => addformData(values.monto, values.plazo, values.ingreso)}
+            onClick={() => addformData(values.moneda, values.monto, values.plazo, values.ingreso)}
           >
             Comparar
           </Button>

@@ -34,10 +34,10 @@ const App = () => {
 
   console.log('Datos Ingresados - Paso 1:', formData);
 
-  const addformData = (montoAdd, plazoAdd, ingresoAdd) => {
+  const addformData = (monedaAdd, montoAdd, plazoAdd, ingresoAdd) => {
     if (formData.length === 0) {
       setformData([{
-        moneda: 'Soles',
+        moneda: monedaAdd,
         monto: montoAdd,
         plazo: plazoAdd,
         ingreso: ingresoAdd,
@@ -47,7 +47,7 @@ const App = () => {
       newformData.splice(0, formData.length);
       newformData.push(
         {
-          moneda: 'Soles',
+          moneda: monedaAdd,
           monto: montoAdd,
           plazo: plazoAdd,
           ingreso: ingresoAdd,
@@ -63,7 +63,7 @@ const App = () => {
   useEffect(() => {
     localStorage.setItem('formInfo', JSON.stringify(formInfo));
   }, [formInfo]);
-
+  console.log('Datos Ingresados - Paso 3:', formInfo);
   const submitSecondForm = (info) => {
     if (info.length === 0) {
       const newformInfo = [info];
@@ -76,13 +76,36 @@ const App = () => {
       console.log(newformInfox);
       setformInfo(newformInfox);
     }
-    // const newformDatax = [...formData];
-    // newformDatax.splice(0, 1);
-    // console.log('info', info);
-    // const newformData = [...formData, info];
-    // console.log(newformData);
-    // setformData(newformData);
   };
+  // <-- Persistir Datos Bank:
+  const formBankLocalStorage = JSON.parse(localStorage.getItem('formBank') || '[]');
+  const [formBank, setformBank] = useState(formBankLocalStorage);
+
+  useEffect(() => {
+    localStorage.setItem('formBank', JSON.stringify(formBank));
+  }, [formBank]);
+
+  console.log('Datos Ingresados - Paso 2:', formBank);
+
+  const addBank = (nameAdd, tasaAdd) => {
+    if (formData.length === 0) {
+      setformBank([{
+        name: nameAdd,
+        tasa: tasaAdd,
+      }]);
+    } else {
+      const newformBank = [...formBank];
+      newformBank.splice(0, formBank.length);
+      newformBank.push(
+        {
+          name: nameAdd,
+          tasa: tasaAdd,
+        },
+      );
+      setformBank(newformBank);
+    }
+  };
+  // -- --->
   return (
     <div className="App">
       <BrowserRouter>
@@ -98,13 +121,13 @@ const App = () => {
             <DataClient handleSubmitForm={handleSubmitForm} addformData={addformData} />
           </Route>
           <Route path="/selectBank">
-            <SelectBank calculate={stateForm} formData={formData} />
+            <SelectBank calculate={stateForm} formData={formData} addBank={addBank} />
           </Route>
           <Route path="/completed">
             <Completed handleSubmitForm={submitSecondForm} formData={formData} />
           </Route>
           <Route path="/Final">
-            <Final formData={formData} formInfo={formInfo} />
+            <Final formData={formData} formInfo={formInfo} formBank={formBank} />
           </Route>
         </Switch>
       </BrowserRouter>

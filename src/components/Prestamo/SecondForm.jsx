@@ -3,9 +3,12 @@ import PropTypes from 'prop-types';
 import {
   Button, Col, Form,
 } from 'react-bootstrap';
+import Modal from 'react-bootstrap/Modal';
+import imagenes from '../images.jpg';
 // import { useHistory } from 'react-router-dom';
 
 const SecondForm = (props) => {
+  const [smModalVerificate, setSmModalVerificate] = useState(false);
   const { handleSubmitForm } = props;
   const [validated, setValidated] = useState(false);
   const initialStateValues = {
@@ -32,6 +35,7 @@ const SecondForm = (props) => {
       event.stopPropagation();
       console.log('no completado');
     } else {
+      setSmModalVerificate(true);
       handleSubmitForm(values);
       event.preventDefault();
     }
@@ -40,12 +44,14 @@ const SecondForm = (props) => {
 
   const clickToRedirect = () => {
     console.log('completado');
+    setSmModalVerificate(false);
   };
-  //   const onSubmitValue = (event) => {
-  //     event.preventDefault();
+    //   const onSubmitValue = (event) => {
+    //     event.preventDefault();
 
   //     console.log('click');
   //   };
+
   return (
     <>
       <Form action="post" noValidate validated={validated} onSubmit={handleSubmit}>
@@ -192,8 +198,23 @@ const SecondForm = (props) => {
             feedback="You must agree before submitting."
           />
         </Form.Group>
-        <Button type="submit" onClick={clickToRedirect}>Submit form</Button>
+        <Button type="submit">Submit form</Button>
       </Form>
+
+      <Modal
+        size="sm"
+        show={smModalVerificate}
+        onHide={() => setSmModalVerificate(false)}
+        aria-labelledby="example-modal-sizes-title-sm"
+      >
+        <Modal.Header closeButton>
+          <img src={imagenes} className="img" alt="juntas" />
+        </Modal.Header>
+        <Modal.Body>
+          <p>Por favor verifica que tus datos en la solicitud siguiente sean correctos.</p>
+          <Button type="button" onClick={() => clickToRedirect()}>Ok</Button>
+        </Modal.Body>
+      </Modal>
     </>
   );
 };

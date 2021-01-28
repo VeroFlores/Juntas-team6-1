@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 import { getData, getRate } from '../../firebase/function';
 
 const Prestamos = (props) => {
-  const { calculate, formData } = props;
+  const { calculate, formData, addBank } = props;
   const [data, setData] = useState([]);
   const [rate, setRate] = useState([]);
 
@@ -31,7 +31,6 @@ const Prestamos = (props) => {
   // };
   console.log(calculate[0]);
   const montoTotalPagar = (amount, rates) => parseInt(amount, 10) + parseInt((amount * (rates / 100)), 10);
-
   const cuota = (totalAmount, time) => parseInt((totalAmount / time), 10);
   console.log(montoTotalPagar(5000, 18));
   console.log(typeof (montoTotalPagar(5000, 18)));
@@ -72,7 +71,7 @@ const Prestamos = (props) => {
                         {ra.name}
                       </Col>
                       <Col>
-                        {' '}
+                        S/.
                         {cuota(montoTotalPagar(formData[0].monto, ra.tasa), formData[0].plazo)}
                       </Col>
                       <Col>
@@ -81,8 +80,8 @@ const Prestamos = (props) => {
                         %
                       </Col>
                       <Col>
-                        {' '}
-                        { montoTotalPagar(formData[0].monto, ra.tasa)}
+                        S/.
+                        {montoTotalPagar(formData[0].monto, ra.tasa)}
                         {' '}
                       </Col>
                       <Col xs="12 listBankHorario">
@@ -99,7 +98,7 @@ const Prestamos = (props) => {
                     : <p> </p>
 
                 }
-                              <button type="button" className="btn-prestamo-b  btn btn-xm">Lo quiero</button>
+                              <button type="button" className="btn-prestamo-b  btn btn-xm" onClick={() => addBank(ra.name, ra.tasa)}>Lo quiero</button>
                             </div>
                           </div>
                         </div>
@@ -123,4 +122,5 @@ export default Prestamos;
 Prestamos.propTypes = {
   calculate: PropTypes.shape.isRequired,
   formData: PropTypes.shape.isRequired,
+  addBank: PropTypes.shape.isRequired,
 };

@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import Image from 'react-bootstrap/Image';
 
 const Final = (props) => {
-  const { formData, formInfo } = props;
+  const { formData, formInfo, formBank } = props;
   console.log('Paso 4  - Traer datos del formulario Paso 1:', formData);
+  console.log('Paso 4  - Traer datos del formulario Paso 2:', formBank);
   console.log('Paso 4  - Traer datos del formulario Paso 3:', formInfo);
   return (
     <>
@@ -27,4 +28,5 @@ export default Final;
 Final.propTypes = {
   formData: PropTypes.shape.isRequired,
   formInfo: PropTypes.shape.isRequired,
+  formBank: PropTypes.shape.isRequired,
 };
