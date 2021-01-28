@@ -1,8 +1,8 @@
 import React from 'react';
 import Image from 'react-bootstrap/Image';
-import iconos from './iconosMas.jpg';
-import bancos from './groupBank.png';
-import imagenes from './images.jpg';
+import iconos from '../images/iconosMas.jpg';
+import bancos from '../images/groupBank.png';
+import imagenes from '../images/images.jpg';
 
 const Home = () => (
   <>

@@ -5,7 +5,7 @@ import {
   Nav, Navbar,
 } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import imagenes from './images.jpg';
+import imagenes from '../images/images.jpg';
 
 const ViewMenu = () => {
   const [show, setShow] = useState(false);
