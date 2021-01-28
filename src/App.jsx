@@ -9,6 +9,7 @@ import SelectBank from './components/Prestamo/SelectBank';
 import Completed from './components/Prestamo/Completed';
 import { saveData } from './firebase/function';
 import Final from './components/Prestamo/Final';
+
 // import db from './firebase';
 
 const App = () => {
@@ -18,9 +19,9 @@ const App = () => {
     setStateForm([values]);
     saveData(values);
   };
-  const submitSecondForm = (info) => {
-    console.log(info);
-  };
+  // const submitSecondForm = (info) => {
+  //   console.log('info', info);
+  // };
   console.log(stateForm);
 
   // <-- Persistir Datos:
@@ -56,8 +57,12 @@ const App = () => {
     }
   };
   // -- --->
-
-
+  const submitSecondForm = (info) => {
+    console.log('info', info);
+    const newformData = [...formData, info];
+    console.log(newformData);
+    setformData(newformData);
+  };
   return (
     <div className="App">
       <BrowserRouter>
