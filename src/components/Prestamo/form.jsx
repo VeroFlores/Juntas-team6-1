@@ -1,12 +1,18 @@
 /* eslint-disable max-len */
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {
   Button, Col, Form,
 } from 'react-bootstrap';
 
 const FormSection = (props) => {
+  const history = useHistory();
+  const redirectBank = () => {
+    history.push('/selectBank');
+  };
+
   const { handleSubmitForm, addformData } = props;
   const [validated, setValidated] = useState(false);
   const handleSubmit = (event) => {
@@ -116,7 +122,7 @@ const FormSection = (props) => {
           </Button> */}
           <Button
             type="button"
-            onClick={() => addformData(values.moneda, values.monto, values.plazo, values.ingreso)}
+            onClick={() => { addformData(values.moneda, values.monto, values.plazo, values.ingreso); redirectBank(); }}
           >
             Comparar
           </Button>

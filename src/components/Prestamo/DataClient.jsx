@@ -10,7 +10,7 @@ export function ButtonToSelect() {
     history.push('/selectBank');
   }
   return (
-    <button type="submit" onClick={handleClick}>
+    <button type="submit" onClick={handleClick} className="">
       Empezar
     </button>
   );

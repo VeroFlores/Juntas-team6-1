@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import {
   Col, Row,
 } from 'react-bootstrap';
@@ -9,6 +10,10 @@ import PropTypes from 'prop-types';
 import { getData, getRate } from '../../firebase/function';
 
 const Prestamos = (props) => {
+  const history = useHistory();
+  const redirectCompleted = () => {
+    history.push('/Completed');
+  };
   const { calculate, formData, addBank } = props;
   const [data, setData] = useState([]);
   const [rate, setRate] = useState([]);
@@ -97,7 +102,7 @@ const Prestamos = (props) => {
                     ? <b>Juntas recomienda </b>
                     : <p> </p>
                 }
-                              <button type="button" className="btn-prestamo-b  btn btn-xm" onClick={() => addBank(ra.name, ra.tasa)}>Lo quiero</button>
+                              <button type="button" className="btn-prestamo-b  btn btn-xm" onClick={() => { addBank(ra.name, ra.tasa); redirectCompleted(); }}>Lo quiero</button>
                             </div>
                           </div>
                         </div>

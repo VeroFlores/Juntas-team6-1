@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {
   Button, Col, Form,
@@ -8,6 +9,10 @@ import juntas from '../../images/logoJuntas.jpg';
 // import { useHistory } from 'react-router-dom';
 
 const SecondForm = (props) => {
+  const history = useHistory();
+  const redirectFinal = () => {
+    history.push('/Final');
+  };
   const [smModalVerificate, setSmModalVerificate] = useState(false);
   const { handleSubmitForm } = props;
   const [validated, setValidated] = useState(false);
@@ -44,6 +49,7 @@ const SecondForm = (props) => {
   const clickToRedirect = () => {
     console.log('completado');
     setSmModalVerificate(false);
+    redirectFinal();
   };
   //   const onSubmitValue = (event) => {
   //     event.preventDefault();
@@ -198,7 +204,7 @@ const SecondForm = (props) => {
             feedback="Debes de estar de acuerdo ,antes de enviar."
           />
         </Form.Group>
-        <Button type="submit" onClick={clickToRedirect}>Submit form</Button>
+        <Button type="submit">Submit form</Button>
       </Form>
       <Modal
         size="sm"
