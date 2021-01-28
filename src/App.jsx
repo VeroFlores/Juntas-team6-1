@@ -9,6 +9,7 @@ import SelectBank from './components/Prestamo/SelectBank';
 import Completed from './components/Prestamo/Completed';
 import { saveData } from './firebase/function';
 import Final from './components/Prestamo/Final';
+import Login from './components/Login';
 
 // import db from './firebase';
 
@@ -34,10 +35,10 @@ const App = () => {
 
   console.log('Datos Ingresados - Paso 1:', formData);
 
-  const addformData = (montoAdd, plazoAdd, ingresoAdd) => {
+  const addformData = (monedaAdd, montoAdd, plazoAdd, ingresoAdd) => {
     if (formData.length === 0) {
       setformData([{
-        moneda: 'Soles',
+        moneda: monedaAdd,
         monto: montoAdd,
         plazo: plazoAdd,
         ingreso: ingresoAdd,
@@ -47,7 +48,7 @@ const App = () => {
       newformData.splice(0, formData.length);
       newformData.push(
         {
-          moneda: 'Soles',
+          moneda: monedaAdd,
           monto: montoAdd,
           plazo: plazoAdd,
           ingreso: ingresoAdd,
@@ -57,12 +58,55 @@ const App = () => {
     }
   };
   // -- --->
+  const formInfoLocalStorage = JSON.parse(localStorage.getItem('formInfo') || '[]');
+  const [formInfo, setformInfo] = useState(formInfoLocalStorage);
+
+  useEffect(() => {
+    localStorage.setItem('formInfo', JSON.stringify(formInfo));
+  }, [formInfo]);
+  console.log('Datos Ingresados - Paso 3:', formInfo);
   const submitSecondForm = (info) => {
-    console.log('info', info);
-    const newformData = [...formData, info];
-    console.log(newformData);
-    setformData(newformData);
+    if (info.length === 0) {
+      const newformInfo = [info];
+      console.log(newformInfo);
+      setformInfo(newformInfo);
+    } else {
+      const newformInfo = [...formInfo];
+      newformInfo.splice(0, formInfo.length);
+      const newformInfox = [info];
+      console.log(newformInfox);
+      setformInfo(newformInfox);
+    }
   };
+  // <-- Persistir Datos Bank:
+  const formBankLocalStorage = JSON.parse(localStorage.getItem('formBank') || '[]');
+  const [formBank, setformBank] = useState(formBankLocalStorage);
+
+  useEffect(() => {
+    localStorage.setItem('formBank', JSON.stringify(formBank));
+  }, [formBank]);
+
+  console.log('Datos Ingresados - Paso 2:', formBank);
+
+  const addBank = (nameAdd, tasaAdd) => {
+    if (formData.length === 0) {
+      setformBank([{
+        name: nameAdd,
+        tasa: tasaAdd,
+      }]);
+    } else {
+      const newformBank = [...formBank];
+      newformBank.splice(0, formBank.length);
+      newformBank.push(
+        {
+          name: nameAdd,
+          tasa: tasaAdd,
+        },
+      );
+      setformBank(newformBank);
+    }
+  };
+  // -- --->
   return (
     <div className="App">
       <BrowserRouter>
@@ -71,20 +115,23 @@ const App = () => {
           <Route path="/" exact>
             <Home />
           </Route>
-          <Route path="/servicios">
+          <Route path="/Servicios">
             <Servicios />
           </Route>
           <Route path="/dataClient">
             <DataClient handleSubmitForm={handleSubmitForm} addformData={addformData} />
           </Route>
           <Route path="/selectBank">
-            <SelectBank calculate={stateForm} formData={formData} />
+            <SelectBank calculate={stateForm} formData={formData} addBank={addBank} />
           </Route>
           <Route path="/completed">
             <Completed handleSubmitForm={submitSecondForm} formData={formData} />
           </Route>
           <Route path="/Final">
-            <Final formData={formData} />
+            <Final formData={formData} formInfo={formInfo} formBank={formBank} />
+          </Route>
+          <Route path="/Login">
+            <Login />
           </Route>
         </Switch>
       </BrowserRouter>

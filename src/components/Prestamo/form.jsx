@@ -45,7 +45,7 @@ const FormSection = (props) => {
         <Form.Group as={Col} md="4" controlId="exampleForm.ControlSelect1">
           <Form.Label id="colorLabel">Moneda</Form.Label>
           <Form.Control
-            id="color"
+            className="colorOption"
             as="select"
             name="moneda"
             value={values.moneda}
@@ -116,8 +116,7 @@ const FormSection = (props) => {
           </Button> */}
           <Button
             type="button"
-            id="btnColor"
-            onClick={() => addformData(values.monto, values.plazo, values.ingreso)}
+            onClick={() => addformData(values.moneda, values.monto, values.plazo, values.ingreso)}
           >
             Comparar
           </Button>
