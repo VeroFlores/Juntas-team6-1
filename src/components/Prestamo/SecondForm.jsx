@@ -49,7 +49,7 @@ const SecondForm = (props) => {
   return (
     <>
       <Form action="post" noValidate validated={validated} onSubmit={handleSubmit}>
-        <p>Datos personales</p>
+        <p className="headerForm"> Datos personales</p>
         <Form.Row>
           <Form.Group as={Col} md="6" controlId="validationCustom01">
             <Form.Label>Nombres y apellidos</Form.Label>

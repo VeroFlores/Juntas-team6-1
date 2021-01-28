@@ -22,30 +22,32 @@ const DataClient = (props) => {
       <section id="prestamos" className="padded">
         <Image src="https://susociodenegocios.com/wp-content/uploads/2019/02/mujer-duena-de-su-negocio.jpg" fluid />
         <div className="referenc">
-          <p> Elige el Prestamo ideal para ti</p>
+          <p> Comparador de prestamos</p>
         </div>
         <div className="referenc2">
           <p className="hola">
-            Te recomendamos elegir el préstamo que más te convenga.
+            Angie,las tasa de interés son exclusivas de las comunidad Juntas.
+            Elige la tasa que más te conviene.
           </p>
         </div>
-      </section>
-      <div className="containerAll">
-        <div className="container">
-          <ul className="progressBar">
-            <li className="active"> Coloca tus datos</li>
-            <li> Selecciona el banco/tasa</li>
-            <li> Proceso Exitoso</li>
-            <li> Final</li>
-          </ul>
+        <div className="containerAll">
+          <div className="container">
+            <ul className="progressBar">
+              <li className="active"> Rellena los datos</li>
+              <li> Compara y elige</li>
+              <li> Solicita</li>
+              <li> Confirma</li>
+            </ul>
+          </div>
         </div>
-      </div>
-      <div className="formDiv">
-        <FormSection handleSubmitForm={handleSubmitForm} addformData={addformData} />
-      </div>
-      <div>
-        <ButtonToSelect />
-      </div>
+        <div className="formDiv">
+          <FormSection handleSubmitForm={handleSubmitForm} addformData={addformData} />
+        </div>
+        <div>
+          <ButtonToSelect />
+        </div>
+      </section>
+
     </>
   );
 };
