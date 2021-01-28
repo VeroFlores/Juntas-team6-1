@@ -16,7 +16,7 @@ export function ButtonToSelect() {
   );
 }
 const DataClient = (props) => {
-  const { handleSubmitForm } = props;
+  const { handleSubmitForm, addformData } = props;
   return (
     <>
       <section id="prestamos" className="padded">
@@ -41,7 +41,7 @@ const DataClient = (props) => {
         </div>
       </div>
       <div className="formDiv">
-        <FormSection handleSubmitForm={handleSubmitForm} />
+        <FormSection handleSubmitForm={handleSubmitForm} addformData={addformData} />
       </div>
       <div>
         <ButtonToSelect />
@@ -54,4 +54,5 @@ export default DataClient;
 DataClient.propTypes = {
   // handleInputChange: PropTypes.func.isRequired,
   handleSubmitForm: PropTypes.func.isRequired,
+  addformData: PropTypes.func.isRequired,
 };

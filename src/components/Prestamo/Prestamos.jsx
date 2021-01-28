@@ -1,6 +1,5 @@
 /* eslint-disable max-len */
 import React, { useState, useEffect } from 'react';
-// import { Redirect } from 'react-router-dom';
 import {
   Col, Row,
 } from 'react-bootstrap';
@@ -10,7 +9,7 @@ import PropTypes from 'prop-types';
 import { getData, getRate } from '../../firebase/function';
 
 const Prestamos = (props) => {
-  const { calculate } = props;
+  const { calculate, formData } = props;
   const [data, setData] = useState([]);
   const [rate, setRate] = useState([]);
 
@@ -65,8 +64,8 @@ const Prestamos = (props) => {
             <Col xs="12"> </Col>
           </Row>
           <Row className="listTasasEntidad">
-            {
-                calculate.length > 0
+            { // cambie calculate por formData --- Clari!
+                formData.length > 0
                   ? rate.map((ra) => (
                     <>
                       <Col xs="12 listBank">
@@ -74,7 +73,7 @@ const Prestamos = (props) => {
                       </Col>
                       <Col>
                         {' '}
-                        {cuota(montoTotalPagar(calculate[0].monto, ra.tasa), calculate[0].plazo)}
+                        {cuota(montoTotalPagar(formData[0].monto, ra.tasa), formData[0].plazo)}
                       </Col>
                       <Col>
                         {' '}
@@ -83,7 +82,7 @@ const Prestamos = (props) => {
                       </Col>
                       <Col>
                         {' '}
-                        { montoTotalPagar(calculate[0].monto, ra.tasa)}
+                        { montoTotalPagar(formData[0].monto, ra.tasa)}
                         {' '}
                       </Col>
                       <Col xs="12 listBankHorario">
@@ -100,7 +99,6 @@ const Prestamos = (props) => {
                     : <p> </p>
 
                 }
-                              {/* <button type="button" className="btn-prestamo-a btn btn-xm">Juntas recomienda</button> */}
                               <button type="button" className="btn-prestamo-b  btn btn-xm">Lo quiero</button>
                             </div>
                           </div>
@@ -124,4 +122,5 @@ const Prestamos = (props) => {
 export default Prestamos;
 Prestamos.propTypes = {
   calculate: PropTypes.shape.isRequired,
+  formData: PropTypes.shape.isRequired,
 };
