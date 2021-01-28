@@ -18,7 +18,9 @@ const App = () => {
     setStateForm([values]);
     saveData(values);
   };
-
+  const submitSecondForm = (info) => {
+    console.log(info);
+  };
   console.log(stateForm);
 
   // <-- Persistir Datos:
@@ -54,11 +56,7 @@ const App = () => {
     }
   };
   // -- --->
-  const submitSecondForm = (info) => {
-    console.log('info', info);
-    const newformData = [...formData, ...info];
-    console.log(setformData(newformData));
-  };
+
   return (
     <div className="App">
       <BrowserRouter>
