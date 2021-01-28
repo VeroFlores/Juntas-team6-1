@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Home from './components/Home';
 import Servicios from './components/Servicios';
@@ -13,6 +13,7 @@ import Final from './components/Prestamo/Final';
 
 const App = () => {
   const [stateForm, setStateForm] = useState([]);
+
   const handleSubmitForm = (values) => {
     setStateForm([values]);
     saveData(values);
@@ -20,6 +21,43 @@ const App = () => {
   const submitSecondForm = (info) => {
     console.log(info);
   };
+  console.log(stateForm);
+
+  // <-- Persistir Datos:
+  const formDataLocalStorage = JSON.parse(localStorage.getItem('formData') || '[]');
+  const [formData, setformData] = useState(formDataLocalStorage);
+
+  useEffect(() => {
+    localStorage.setItem('formData', JSON.stringify(formData));
+  }, [formData]);
+
+  console.log('Datos Ingresados - Paso 1:', formData);
+
+  const addformData = (montoAdd, plazoAdd, ingresoAdd) => {
+    if (formData.length === 0) {
+      setformData([{
+        moneda: 'Soles',
+        monto: montoAdd,
+        plazo: plazoAdd,
+        ingreso: ingresoAdd,
+      }]);
+    } else {
+      const newformData = [...formData];
+      newformData.splice(0, formData.length);
+      newformData.push(
+        {
+          moneda: 'Soles',
+          monto: montoAdd,
+          plazo: plazoAdd,
+          ingreso: ingresoAdd,
+        },
+      );
+      setformData(newformData);
+    }
+  };
+  // -- --->
+
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -32,16 +70,16 @@ const App = () => {
             <Servicios />
           </Route>
           <Route path="/dataClient">
-            <DataClient handleSubmitForm={handleSubmitForm} />
+            <DataClient handleSubmitForm={handleSubmitForm} addformData={addformData} />
           </Route>
           <Route path="/selectBank">
-            <SelectBank calculate={stateForm} />
+            <SelectBank calculate={stateForm} formData={formData} />
           </Route>
           <Route path="/completed">
-            <Completed handleSubmitForm={submitSecondForm} />
+            <Completed handleSubmitForm={submitSecondForm} formData={formData} />
           </Route>
           <Route path="/Final">
-            <Final />
+            <Final formData={formData} />
           </Route>
         </Switch>
       </BrowserRouter>
