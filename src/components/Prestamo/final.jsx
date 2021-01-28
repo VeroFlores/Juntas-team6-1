@@ -11,7 +11,16 @@ const Final = (props) => {
     <>
       <section id="prestamos" className="padded">
         <Image src="https://susociodenegocios.com/wp-content/uploads/2019/02/mujer-duena-de-su-negocio.jpg" fluid />
-        <h1> Prestamos</h1>
+        <div className="referenc">
+          <p> Solicitud 100% Digital</p>
+        </div>
+        <p className="hola">
+          Por favor completa el siguiente formulario,
+          el banco se comunicará contigo para la gestión.
+        </p>
+        <p className="hola">
+          *Nunca te pediremos claves de tus cuentas
+        </p>
       </section>
       <div className="container">
         <ul className="progressBar">
