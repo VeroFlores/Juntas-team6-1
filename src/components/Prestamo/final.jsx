@@ -25,7 +25,7 @@ const Final = (props) => {
       <div className="container">
         <ul className="progressBar">
           <li className="active"> Coloca tus datos</li>
-          <li className="active"> Selecciona el banco/tasa</li>
+          <li className="active"> Compara y elige</li>
           <li className="active"> Proceso Exitoso</li>
           <li className="active"> Final</li>
         </ul>

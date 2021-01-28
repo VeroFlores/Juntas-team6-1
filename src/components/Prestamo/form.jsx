@@ -85,7 +85,7 @@ const FormSection = (props) => {
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>
         <Form.Group as={Col} md="4" controlId="validationCustomUsername">
-          <Form.Label id="colorLabel">Ingresos</Form.Label>
+          <Form.Label id="colorLabel">Ingresos (minimo 1000 soles)</Form.Label>
           <Form.Control
             type="number"
             placeholder="Ingresa monto"
