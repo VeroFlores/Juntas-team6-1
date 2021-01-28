@@ -1,12 +1,12 @@
 import React from 'react';
-import juntas from '../images/logoJuntas.jpg';
-import goo from '../images/goo1.png';
+/* import juntas from '../images/logoJuntas.jpg'; */
+import goo from '../images/google.png';
+import face from '../images/face.jpg';
 import IniciarSesion from './IniciarSesion';
 
 const Login = () => (
   <>
     <section id="servicios" className="padded">
-      <img src={juntas} className="img" alt="juntas" />
       <div className="referenc2">
         <p>
           ---------------------------------
@@ -17,7 +17,12 @@ const Login = () => (
         <p>
           ¿Aún no te has registrado?
         </p>
-        <img src={goo} className="goo" alt="logout" />
+        <p>
+          <img src={goo} className="goo" alt="logout" />
+        </p>
+        <p>
+          <img src={face} className="goo" alt="logout" />
+        </p>
         <p>
           -- O accede a tu cuenta de Juntas --
         </p>

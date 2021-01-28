@@ -5,6 +5,8 @@ import Summary from './Summary';
 
 const Final = (props) => {
   const { formData, formInfo, formBank } = props;
+  console.log('Paso 4  - Traer datos del formulario Paso 2:', formBank);
+
   return (
     <>
       <section id="prestamos" className="padded">

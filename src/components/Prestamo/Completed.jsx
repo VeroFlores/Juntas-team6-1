@@ -11,7 +11,7 @@ export function ButtonToSelect() {
   }
 
   return (
-    <button type="submit" onClick={handleClick}>
+    <button type="submit" onClick={handleClick} className="conocerMasUnirme">
       Siguiente
     </button>
   );
@@ -35,15 +35,17 @@ const Completed = (props) => {
           *Nunca te pediremos claves de tus cuentas
         </p>
       </section>
-      <div className="container">
-        <ul className="progressBar">
-          <li className="active"> Coloca tus datos</li>
-          <li className="active"> Selecciona el banco/tasa</li>
-          <li className="active"> Proceso Exitoso</li>
-          <li> Final</li>
-        </ul>
+      <div className="daniForm">
+        <div className="container">
+          <ul className="progressBar">
+            <li className="active"> Coloca tus datos</li>
+            <li className="active"> Selecciona el banco/tasa</li>
+            <li className="active"> Proceso Exitoso</li>
+            <li> Final</li>
+          </ul>
+          <SecondForm handleSubmitForm={handleSubmitForm} />
+        </div>
       </div>
-      <SecondForm handleSubmitForm={handleSubmitForm} />
       <div>
         <ButtonToSelect />
       </div>
