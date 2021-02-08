@@ -1,12 +1,18 @@
 /* eslint-disable max-len */
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {
   Button, Col, Form,
 } from 'react-bootstrap';
 
 const FormSection = (props) => {
+  const history = useHistory();
+  const redirectBank = () => {
+    history.push('/selectBank');
+  };
+
   const { handleSubmitForm, addformData } = props;
   const [validated, setValidated] = useState(false);
   const handleSubmit = (event) => {
@@ -43,8 +49,9 @@ const FormSection = (props) => {
     <>
       <Form noValidate validated={validated} onFormSubmit={handleSubmit} onSubmit={onSubmit}>
         <Form.Group as={Col} md="4" controlId="exampleForm.ControlSelect1">
-          <Form.Label>Moneda</Form.Label>
+          <Form.Label id="colorLabel">Moneda</Form.Label>
           <Form.Control
+            className="colorOption"
             as="select"
             name="moneda"
             value={values.moneda}
@@ -56,7 +63,7 @@ const FormSection = (props) => {
           </Form.Control>
         </Form.Group>
         <Form.Group as={Col} md="4" controlId="validationCustom01">
-          <Form.Label>Monto Solictado</Form.Label>
+          <Form.Label id="colorLabel">Monto Solictado</Form.Label>
           <Form.Control
             required
             type="number"
@@ -64,16 +71,18 @@ const FormSection = (props) => {
             name="monto"
             value={values.monto}
             onChange={handleChange}
+            id="color"
           />
           <Form.Control.Feedback type="invalid">
             Ingrese el monto solicitado.
           </Form.Control.Feedback>
         </Form.Group>
         <Form.Group as={Col} md="4" controlId="validationCustom02">
-          <Form.Label>Plazo</Form.Label>
+          <Form.Label id="colorLabel">Plazo</Form.Label>
           <Form.Control
             required
             type="number"
+            id="color"
             placeholder="12 meses"
             name="plazo"
             value={values.plazo}
@@ -82,13 +91,14 @@ const FormSection = (props) => {
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>
         <Form.Group as={Col} md="4" controlId="validationCustomUsername">
-          <Form.Label>Ingresos</Form.Label>
+          <Form.Label id="colorLabel">Ingresos (minimo 1000 soles)</Form.Label>
           <Form.Control
             type="number"
             placeholder="Ingresa monto"
             name="ingreso"
             value={values.ingreso}
             onChange={handleChange}
+            id="color"
             required
           />
           <Form.Control.Feedback type="invalid">
@@ -98,6 +108,7 @@ const FormSection = (props) => {
         <Form.Group as={Col} md="4">
           <Form.Check
             required
+            id="color"
             label="Agree to terms and conditions"
             feedback="You must agree before submitting."
             onChange={handleChange}
@@ -111,7 +122,7 @@ const FormSection = (props) => {
           </Button> */}
           <Button
             type="button"
-            onClick={() => addformData(values.monto, values.plazo, values.ingreso)}
+            onClick={() => { addformData(values.moneda, values.monto, values.plazo, values.ingreso); redirectBank(); }}
           >
             Comparar
           </Button>
