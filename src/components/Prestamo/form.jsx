@@ -48,7 +48,7 @@ const FormSection = (props) => {
   return (
     <>
       <Form noValidate validated={validated} onFormSubmit={handleSubmit} onSubmit={onSubmit}>
-        <Form.Group as={Col} md="4" controlId="exampleForm.ControlSelect1">
+        <Form.Group as={Col} md="12" controlId="exampleForm.ControlSelect1">
           <Form.Label id="colorLabel">Moneda</Form.Label>
           <Form.Control
             className="colorOption"
@@ -62,7 +62,7 @@ const FormSection = (props) => {
             <option value="dolares">dólares</option>
           </Form.Control>
         </Form.Group>
-        <Form.Group as={Col} md="4" controlId="validationCustom01">
+        <Form.Group as={Col} md="12" controlId="validationCustom01">
           <Form.Label id="colorLabel">Monto Solictado</Form.Label>
           <Form.Control
             required
@@ -71,18 +71,16 @@ const FormSection = (props) => {
             name="monto"
             value={values.monto}
             onChange={handleChange}
-            id="color"
           />
           <Form.Control.Feedback type="invalid">
             Ingrese el monto solicitado.
           </Form.Control.Feedback>
         </Form.Group>
-        <Form.Group as={Col} md="4" controlId="validationCustom02">
+        <Form.Group as={Col} md="12" controlId="validationCustom02">
           <Form.Label id="colorLabel">Plazo</Form.Label>
           <Form.Control
             required
             type="number"
-            id="color"
             placeholder="12 meses"
             name="plazo"
             value={values.plazo}
@@ -90,7 +88,7 @@ const FormSection = (props) => {
           />
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>
-        <Form.Group as={Col} md="4" controlId="validationCustomUsername">
+        <Form.Group as={Col} md="12" controlId="validationCustomUsername">
           <Form.Label id="colorLabel">Ingresos (minimo 1000 soles)</Form.Label>
           <Form.Control
             type="number"
@@ -98,23 +96,21 @@ const FormSection = (props) => {
             name="ingreso"
             value={values.ingreso}
             onChange={handleChange}
-            id="color"
             required
           />
           <Form.Control.Feedback type="invalid">
             Ingrese el monto solicitado.
           </Form.Control.Feedback>
         </Form.Group>
-        <Form.Group as={Col} md="4">
+        <Form.Group as={Col} md="12">
           <Form.Check
             required
-            id="color"
             label="Agree to terms and conditions"
             feedback="You must agree before submitting."
             onChange={handleChange}
           />
         </Form.Group>
-        <Form.Group as={Col} md="4">
+        <Form.Group as={Col} md="12">
           {/* <Button
             type="submit"
           >
