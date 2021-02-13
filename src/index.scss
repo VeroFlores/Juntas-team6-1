@@ -164,7 +164,6 @@ h1 .formulario{
   border-bottom: 1px solid rgba(43, 40, 40, 0.152);
 }
 p{
-  font-family: Roboto;
   width: 100%;
   text-align: center;
   font-size: 18px;
@@ -175,7 +174,6 @@ p{
 }
 
 p.hola{
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 15px;
@@ -223,12 +221,23 @@ p.hola2{
 }
 .referenc3{
   display:flex;
+  flex-direction: column;
   justify-content: center;
+  margin-bottom: 10px;
 }
 .title-form{
+text-decoration: underline;
+  text-align:start;
+  padding:0px;
   color:$colorRosa;
   font-weight: bold;
-
+  margin: 0px;
+}
+.text-form{
+  font-size:15px;
+  text-align:start;
+  padding:0px;
+  margin: 0px;
 }
 .custom-input{
   border: 1px solid #0a0a0a;
@@ -456,7 +465,7 @@ p.hola2{
 }
 
 .btn.btn-xm.btn-prestamo-b1 {
-  margin-left: 25%;
+  margin-left: 20%;
   background-color:$colorRosa;
   border-color: #ac0e0ecf;
   color: #ffffff;
@@ -527,12 +536,19 @@ p.hola2{
 // @media only screen and (max-width: 600px) {...}
 
 // /* Small devices (portrait tablets and large phones, 600px and up) */
-// @media only screen and (min-width: 600px) {...}
+@media only screen and (min-width: 600px) {
+  .btn.btn-xm.btn-prestamo-b1 {
+    margin-left: 40%;
+  }
+}
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
   .progressBar li:after{
     top: 60px;
+  }
+  .btn.btn-xm.btn-prestamo-b1 {
+    margin-left: 65%;
   }
 }
 

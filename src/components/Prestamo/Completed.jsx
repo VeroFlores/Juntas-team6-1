@@ -1,21 +1,8 @@
 import React from 'react';
 import Image from 'react-bootstrap/Image';
-import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import SecondForm from './SecondForm';
 
-export function ButtonToSelect() {
-  const history = useHistory();
-  function handleClick() {
-    history.push('/Final');
-  }
-
-  return (
-    <button type="submit" onClick={handleClick} className="conocerMasUnirme">
-      Siguiente
-    </button>
-  );
-}
 const Completed = (props) => {
   const { handleSubmitForm, formData } = props;
   console.log('Paso 3  - Traer datos del formulario Paso 1:', formData);
@@ -37,8 +24,8 @@ const Completed = (props) => {
           *Nunca te pediremos claves de tus cuentas
         </p>
       </section>
-      <div className="daniForm">
-        <div className="container">
+      <div className="containerAll">
+        <div>
           <ul className="progressBar">
             <li className="active"> Coloca tus datos</li>
             <li className="active"> Selecciona el banco/tasa</li>
@@ -47,9 +34,6 @@ const Completed = (props) => {
           </ul>
           <SecondForm handleSubmitForm={handleSubmitForm} />
         </div>
-      </div>
-      <div>
-        <ButtonToSelect />
       </div>
     </>
   );

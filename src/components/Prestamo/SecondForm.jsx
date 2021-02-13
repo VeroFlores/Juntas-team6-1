@@ -56,13 +56,13 @@ const SecondForm = (props) => {
   //     console.log('click');
   //   };
   return (
-    <div className="col-10 col-sm-6 col-lg-4 formDiv">
+    <div className="col-10 col-sm-6 col-lg-4 formDiv mb-3">
       <Form action="post" noValidate validated={validated} onSubmit={handleSubmit}>
         <div className="referenc3">
           <p className="title-form">Datos personales</p>
         </div>
         <div className="referenc3">
-          <p className="hola">Estos datos son necesarios para validar tu identidad</p>
+          <p className="text-form">Estos datos son necesarios para validar tu identidad</p>
         </div>
         <Form.Row>
           <Form.Group as={Col} md="12" controlId="validationCustom01">
@@ -139,9 +139,13 @@ const SecondForm = (props) => {
             </Form.Control>
           </Form.Group>
         </Form.Row>
-        <p>Datos para el préstamo</p>
-        <p>Estos datos son necesarios para validar tu identidad</p>
-        <p>La cuenta a abonar debe ser del solicitante</p>
+        <div className="referenc3">
+          <p className="title-form">Datos para el préstamo</p>
+        </div>
+        <div className="referenc3">
+          <p className="text-form pad">Estos datos son necesarios para validar tu identidad</p>
+          <p className="text-form pad">*La cuenta a abonar debe ser del solicitante</p>
+        </div>
         <Form.Row>
           <Form.Group as={Col} md="12" controlId="validationCustom03">
             <Form.Label className="colorLabel">Rubro de Negocio</Form.Label>
@@ -212,11 +216,13 @@ const SecondForm = (props) => {
         <Form.Group>
           <Form.Check
             required
-            label="He leído y acpeto la política de Tratamiento y Protección de datos."
+            label="He leído y acepto la política de Tratamiento y Protección de datos."
             feedback="Debes de estar de acuerdo ,antes de enviar."
           />
         </Form.Group>
-        <Button type="submit">Submit form</Button>
+        <div className="btnListTasas container  h-100">
+          <button type="submit" className="btn-prestamo-b  btn btn-xm">Submit form</button>
+        </div>
       </Form>
       <Modal
         size="sm"

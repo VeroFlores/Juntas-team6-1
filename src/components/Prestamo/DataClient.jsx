@@ -28,7 +28,7 @@ const DataClient = (props) => {
             </ul>
           </div>
         </div>
-        <div className="col-10 col-sm-6 col-lg-4 formDiv">
+        <div className="col-10 col-sm-6 col-lg-4 formDiv mb-3">
           <FormSection handleSubmitForm={handleSubmitForm} addformData={addformData} />
         </div>
       </section>
