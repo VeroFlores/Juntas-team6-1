@@ -22,16 +22,16 @@ const DataClient = (props) => {
       <section id="prestamos" className="padded">
         <Image src="https://susociodenegocios.com/wp-content/uploads/2019/02/mujer-duena-de-su-negocio.jpg" fluid />
         <div className="referenc">
-          <p> Comparador de prestamos</p>
+          <p className="h3"> Comparador de préstamos</p>
         </div>
         <div className="referenc2">
-          <p className="hola">
+          <p className="text-formPage">
             Angie,las tasa de interés son exclusivas de las comunidad Juntas.
             Elige la tasa que más te conviene.
           </p>
         </div>
         <div className="containerAll">
-          <div className="container">
+          <div>
             <ul className="progressBar">
               <li className="active"> Rellena los datos</li>
               <li> Compara y elige</li>

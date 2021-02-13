@@ -20,7 +20,12 @@ const FormSection = (props) => {
     if (form.checkValidity() === false) {
       event.preventDefault();
       event.stopPropagation();
+      console.log('no completado');
+    } else {
+      event.preventDefault();
+      console.log('completado');
     }
+    console.log('prueba');
     setValidated(true);
   };
   const initialStateValues = {
@@ -47,10 +52,11 @@ const FormSection = (props) => {
   // };
   return (
     <>
-      <Form noValidate validated={validated} onFormSubmit={handleSubmit} onSubmit={onSubmit}>
+      <Form action="post" noValidate validated={validated} onFormSubmit={onSubmit} onSubmit={handleSubmit}>
         <Form.Group as={Col} md="12" controlId="exampleForm.ControlSelect1">
           <Form.Label id="colorLabel">Moneda</Form.Label>
           <Form.Control
+            required
             className="colorOption"
             as="select"
             name="moneda"
@@ -118,7 +124,7 @@ const FormSection = (props) => {
           </Button> */}
           <Button
             type="button"
-            onClick={() => { addformData(values.moneda, values.monto, values.plazo, values.ingreso); redirectBank(); }}
+            onClick={() => { addformData(values.moneda, values.monto, values.plazo, values.ingreso); }}
           >
             Comparar
           </Button>
