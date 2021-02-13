@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import {
-  Col, Row,
+  Col, Row, Container,
 } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSort } from '@fortawesome/free-solid-svg-icons';
@@ -28,25 +28,15 @@ const Prestamos = (props) => {
     });
   }, []);
   console.log(data);
-  console.log(rate);
   console.log(calculate);
-
-  // const intereses = () => {
-  //   // monto inicial * totalTasa
-  // };
-  console.log(calculate[0]);
   const montoTotalPagar = (amount, rates) => parseInt(amount, 10) + parseInt((amount * (rates / 100)), 10);
   const cuota = (totalAmount, time) => parseInt((totalAmount / time), 10);
-  console.log(montoTotalPagar(5000, 18));
-  console.log(typeof (montoTotalPagar(5000, 18)));
-  console.log(cuota(montoTotalPagar(5000, 18), 18));
 
   return (
     <>
-      <section id="listTasas" className="padded">
+      <Container id="listTasas" className="padded">
         <div className="containerListBank">
           <Row className="listTasasHeader">
-            <Col xs="12"> </Col>
             <Col>
               {' '}
               Valor Cuota
@@ -96,13 +86,7 @@ const Prestamos = (props) => {
                         <div className="btnListTasas container  h-100">
                           <div className="d-flex h-100">
                             <div className="align-self-center mx-auto">
-                              <button type="button" className="btn-prestamo-c btn btn-xm"> + </button>
-                              {
-                  ra.recomendado === 'si'
-                    ? <b>Juntas recomienda </b>
-                    : <p> </p>
-                }
-                              <button type="button" className="btn-prestamo-b  btn btn-xm" onClick={() => { addBank(ra.name, ra.tasa); redirectCompleted(); }}>Lo quiero</button>
+                              <button type="button" className="btn-prestamo-b  btn btn-xm btnColor" onClick={() => { addBank(ra.name, ra.tasa); redirectCompleted(); }}>Lo quiero</button>
                             </div>
                           </div>
                         </div>
@@ -118,7 +102,7 @@ const Prestamos = (props) => {
 }
           </Row>
         </div>
-      </section>
+      </Container>
     </>
   );
 };

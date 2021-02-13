@@ -12,8 +12,8 @@ const DataClient = (props) => {
         <div className="referenc">
           <h1 className="h3"> Comparador de préstamos</h1>
         </div>
-        <div className="referenc2">
-          <p className="text-formPage">
+        <div>
+          <p className="hola">
             Angie,las tasa de interés son exclusivas de las comunidad Juntas.
             Elige la tasa que más te conviene.
           </p>
