@@ -20,12 +20,10 @@ const FormSection = (props) => {
     if (form.checkValidity() === false) {
       event.preventDefault();
       event.stopPropagation();
-      console.log('no completado');
     } else {
       event.preventDefault();
-      console.log('completado');
+      redirectBank();
     }
-    console.log('prueba');
     setValidated(true);
   };
   const initialStateValues = {
@@ -45,19 +43,15 @@ const FormSection = (props) => {
     handleSubmitForm(values);
     setValues(initialStateValues);
   };
-  // const options = ['soles', 'dólares'];
-  // const onFormSubmit = (event) => {
-  //   event.preventDefault();
-  //   // submitForm();
-  // };
+
   return (
     <>
       <Form action="post" noValidate validated={validated} onFormSubmit={onSubmit} onSubmit={handleSubmit}>
         <Form.Group as={Col} md="12" controlId="exampleForm.ControlSelect1">
-          <Form.Label id="colorLabel">Moneda</Form.Label>
+          <Form.Label className="colorLabel">Moneda</Form.Label>
           <Form.Control
             required
-            className="colorOption"
+            className="custom-input"
             as="select"
             name="moneda"
             value={values.moneda}
@@ -69,10 +63,11 @@ const FormSection = (props) => {
           </Form.Control>
         </Form.Group>
         <Form.Group as={Col} md="12" controlId="validationCustom01">
-          <Form.Label id="colorLabel">Monto Solictado</Form.Label>
+          <Form.Label className="colorLabel">Monto Solictado</Form.Label>
           <Form.Control
             required
             type="number"
+            className="custom-input"
             placeholder="5000"
             name="monto"
             value={values.monto}
@@ -83,10 +78,11 @@ const FormSection = (props) => {
           </Form.Control.Feedback>
         </Form.Group>
         <Form.Group as={Col} md="12" controlId="validationCustom02">
-          <Form.Label id="colorLabel">Plazo</Form.Label>
+          <Form.Label className="colorLabel">Plazo</Form.Label>
           <Form.Control
             required
             type="number"
+            className="custom-input"
             placeholder="12 meses"
             name="plazo"
             value={values.plazo}
@@ -95,9 +91,10 @@ const FormSection = (props) => {
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>
         <Form.Group as={Col} md="12" controlId="validationCustomUsername">
-          <Form.Label id="colorLabel">Ingresos (minimo 1000 soles)</Form.Label>
+          <Form.Label className="colorLabel">Ingresos (minimo 1000 soles)</Form.Label>
           <Form.Control
             type="number"
+            className="custom-input"
             placeholder="Ingresa monto"
             name="ingreso"
             value={values.ingreso}
@@ -108,22 +105,10 @@ const FormSection = (props) => {
             Ingrese el monto solicitado.
           </Form.Control.Feedback>
         </Form.Group>
-        <Form.Group as={Col} md="12">
-          <Form.Check
-            required
-            label="Agree to terms and conditions"
-            feedback="You must agree before submitting."
-            onChange={handleChange}
-          />
-        </Form.Group>
-        <Form.Group as={Col} md="12">
-          {/* <Button
-            type="submit"
-          >
-            Comparar
-          </Button> */}
+        <Form.Group className="form-align" as={Col} md="12">
           <Button
-            type="button"
+            type="submit"
+            className="btnColor"
             onClick={() => { addformData(values.moneda, values.monto, values.plazo, values.ingreso); }}
           >
             Comparar

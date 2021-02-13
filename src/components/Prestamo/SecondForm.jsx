@@ -37,7 +37,6 @@ const SecondForm = (props) => {
     if (form.checkValidity() === false) {
       event.preventDefault();
       event.stopPropagation();
-      console.log('no completado');
     } else {
       setSmModalVerificate(true);
       handleSubmitForm(values);
@@ -48,7 +47,6 @@ const SecondForm = (props) => {
 
   const clickToRedirect = (e) => {
     e.preventDefault();
-    console.log('completado');
     setSmModalVerificate(false);
     redirectFinal();
   };

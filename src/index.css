@@ -10857,14 +10857,25 @@ code {
   border: 1px solid #202225;
 }
 
-#btnColor {
-  background-color: 1px solid #C5165B;
+.btnColor {
+  border: 1px solid #C5165B;
+  background-color: #C5165B;
 }
 
-#colorLabel {
+.form-align {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.colorLabel {
   text-align: start;
   font-weight: bold;
   color: #C5165B;
+  margin: 5px auto;
 }
 
 .container {
@@ -10892,7 +10903,7 @@ code {
   list-style-type: none;
   float: left;
   width: 25%;
-  padding: 10%;
+  padding: 6%;
   position: relative;
   text-align: center;
   font-size: 15px;
@@ -10900,7 +10911,6 @@ code {
 }
 
 .progressBar li:before {
-  padding: 8%;
   font-size: 22px;
   content: counter(step);
   counter-increment: step;
@@ -10921,7 +10931,7 @@ code {
   height: 1px;
   background-color: #4A4ADA;
   border: 1px solid #4A4ADA;
-  top: 50px;
+  top: 40px;
   left: -50%;
   z-index: -1;
   text-align: center;
@@ -10963,8 +10973,7 @@ h1 .formulario {
 }
 
 .referenc {
-  -ms-flex-line-pack: center;
-      align-content: center;
+  text-align: center;
   margin-top: 2rem;
   border-bottom: 1px solid rgba(43, 40, 40, 0.152);
 }
@@ -10973,17 +10982,11 @@ p {
   font-family: Roboto;
   width: 100%;
   text-align: center;
-  font-size: 140%;
-  margin-top: 20%;
-}
-
-.text-formPage {
-  font-family: Roboto;
-  font-size: 16px;
+  font-size: 18px;
   letter-spacing: -0.3px;
   font-weight: 500;
   line-height: 19px;
-  text-align: center;
+  padding: 10px 25px;
 }
 
 p.hola {
@@ -11033,6 +11036,10 @@ p.hola2 {
   margin-top: 1rem;
   display: block;
   padding-bottom: black;
+}
+
+.custom-input {
+  border: 1px solid #0a0a0a;
 }
 
 .formDiv {
@@ -11359,19 +11366,22 @@ p.hola2 {
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
   .progressBar li:after {
-    top: 80px;
+    top: 60px;
   }
 }
 
 @media only screen and (min-width: 992px) {
   .progressBar li:after {
-    top: 100px;
+    top: 80px;
+  }
+  p {
+    font-size: 25px;
   }
 }
 
 @media only screen and (min-width: 1200px) {
   .progressBar li:after {
-    top: 130px;
+    top: 90px;
   }
 }
 /*# sourceMappingURL=index.css.map */
