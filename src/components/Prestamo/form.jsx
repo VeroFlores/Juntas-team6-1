@@ -106,13 +106,15 @@ const FormSection = (props) => {
           </Form.Control.Feedback>
         </Form.Group>
         <Form.Group className="form-align" as={Col} md="12">
-          <Button
-            type="submit"
-            className="btnColor"
-            onClick={() => { addformData(values.moneda, values.monto, values.plazo, values.ingreso); }}
-          >
-            Comparar
-          </Button>
+          <div className="btnListTasas container  h-100">
+            <button
+              className="btn-prestamo-b  btn btn-xm"
+              type="submit"
+              onClick={() => { addformData(values.moneda, values.monto, values.plazo, values.ingreso); }}
+            >
+              Comparar
+            </button>
+          </div>
         </Form.Group>
       </Form>
     </>

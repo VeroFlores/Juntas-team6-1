@@ -70,10 +70,7 @@ $primary: $borderColorFont !default;
   border:1px solid #C5165B;
   background-color: #C5165B;
 }
-.form-align{
-display: flex;
-justify-content: center;
-}
+
 .colorLabel{
 text-align:start;
 font-weight: bold;
@@ -87,10 +84,11 @@ margin: 5px auto;
 .progressBar{
   display: flex;
   flex-direction: row;
-  padding-left: 0px;
+  margin: 0px auto;
+  padding:0px;
   counter-reset:step;
   color: white;
-  padding-left:0px;
+
   width:90%;
 }
 .progressBar li{
@@ -222,6 +220,15 @@ p.hola2{
   margin-top:1rem;
   display: block;
   padding-bottom: black;
+}
+.referenc3{
+  display:flex;
+  justify-content: center;
+}
+.title-form{
+  color:$colorRosa;
+  font-weight: bold;
+
 }
 .custom-input{
   border: 1px solid #0a0a0a;
@@ -386,10 +393,11 @@ p.hola2{
   font-weight: 400;
   text-align: center;
 }
-
+.btnListTasas{
+  display: flex;
+  justify-content: center;
+}
 .btnListTasas  button{
-  margin-left: 1em;
-  margin-right: 1em;
   border: 1px solid $colorRosa;
   background-color: $colorRosa;
   color:$colorE

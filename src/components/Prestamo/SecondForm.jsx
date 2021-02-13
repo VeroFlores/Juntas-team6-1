@@ -56,15 +56,20 @@ const SecondForm = (props) => {
   //     console.log('click');
   //   };
   return (
-    <>
+    <div className="col-10 col-sm-6 col-lg-4 formDiv">
       <Form action="post" noValidate validated={validated} onSubmit={handleSubmit}>
-        <p>Datos personales</p>
-        <p>Estos datos son necesarios para validar tu identidad</p>
+        <div className="referenc3">
+          <p className="title-form">Datos personales</p>
+        </div>
+        <div className="referenc3">
+          <p className="hola">Estos datos son necesarios para validar tu identidad</p>
+        </div>
         <Form.Row>
-          <Form.Group as={Col} md="6" controlId="validationCustom01">
-            <Form.Label>Nombres y apellidos</Form.Label>
+          <Form.Group as={Col} md="12" controlId="validationCustom01">
+            <Form.Label className="colorLabel">Nombres y apellidos</Form.Label>
             <Form.Control
               required
+              className="custom-input"
               type="text"
               name="name"
               placeholder="Ej. Ana Ramos Flores"
@@ -73,10 +78,11 @@ const SecondForm = (props) => {
             />
             <Form.Control.Feedback>Ingresa este campo</Form.Control.Feedback>
           </Form.Group>
-          <Form.Group as={Col} md="6" controlId="validationCustom02">
-            <Form.Label>  Documento de Identidad</Form.Label>
+          <Form.Group as={Col} md="12" controlId="validationCustom02">
+            <Form.Label className="colorLabel">  Documento de Identidad</Form.Label>
             <Form.Control
               required
+              className="custom-input"
               type="number"
               name="dni"
               placeholder="Los números deben contener 8 dígitos"
@@ -87,10 +93,11 @@ const SecondForm = (props) => {
           </Form.Group>
         </Form.Row>
         <Form.Row>
-          <Form.Group as={Col} md="6" controlId="validationCustom03">
-            <Form.Label>Ubicación</Form.Label>
+          <Form.Group as={Col} md="12" controlId="validationCustom03">
+            <Form.Label className="colorLabel">Ubicación</Form.Label>
             <Form.Control
               as="select"
+              className="custom-input"
               name="ubicacion"
               value={values.ubicacion}
               onChange={handleChange}
@@ -100,10 +107,11 @@ const SecondForm = (props) => {
               <option value="Callao">Callao</option>
             </Form.Control>
           </Form.Group>
-          <Form.Group as={Col} md="3" controlId="validationCustom04">
-            <Form.Label>Celular</Form.Label>
+          <Form.Group as={Col} md="12" controlId="validationCustom04">
+            <Form.Label className="colorLabel">Celular</Form.Label>
             <Form.Control
               type="number"
+              className="custom-input"
               placeholder="000-000-000"
               name="celular"
               value={values.celular}
@@ -114,10 +122,11 @@ const SecondForm = (props) => {
               Ingresa este campo
             </Form.Control.Feedback>
           </Form.Group>
-          <Form.Group as={Col} md="3" controlId="validationCustom05">
-            <Form.Label>Operador</Form.Label>
+          <Form.Group as={Col} md="12" controlId="validationCustom05">
+            <Form.Label className="colorLabel">Operador</Form.Label>
             <Form.Control
               as="select"
+              className="custom-input"
               name="operador"
               value={values.operador}
               onChange={handleChange}
@@ -134,10 +143,11 @@ const SecondForm = (props) => {
         <p>Estos datos son necesarios para validar tu identidad</p>
         <p>La cuenta a abonar debe ser del solicitante</p>
         <Form.Row>
-          <Form.Group as={Col} md="6" controlId="validationCustom03">
-            <Form.Label>Rubro de Negocio</Form.Label>
+          <Form.Group as={Col} md="12" controlId="validationCustom03">
+            <Form.Label className="colorLabel">Rubro de Negocio</Form.Label>
             <Form.Control
               as="select"
+              className="custom-input"
               name="rubro"
               value={values.rubro}
               onChange={handleChange}
@@ -147,10 +157,11 @@ const SecondForm = (props) => {
               <option value="industrial">Industrial</option>
             </Form.Control>
           </Form.Group>
-          <Form.Group as={Col} md="6" controlId="validationCustom04">
-            <Form.Label>Ruc del Negocio,en caso tengas.</Form.Label>
+          <Form.Group as={Col} md="12" controlId="validationCustom04">
+            <Form.Label className="colorLabel">Ruc del Negocio,en caso tengas.</Form.Label>
             <Form.Control
               type="number"
+              className="custom-input"
               placeholder="Ingrese su Ruc"
               name="ruc"
               value={values.ruc}
@@ -163,10 +174,11 @@ const SecondForm = (props) => {
           </Form.Group>
         </Form.Row>
         <Form.Row>
-          <Form.Group as={Col} md="6" controlId="validationCustom03">
-            <Form.Label>Entidad bancaria</Form.Label>
+          <Form.Group as={Col} md="12" controlId="validationCustom03">
+            <Form.Label className="colorLabel">Entidad bancaria</Form.Label>
             <Form.Control
               as="select"
+              className="custom-input"
               name="entidad"
               value={values.entidad}
               onChange={handleChange}
@@ -181,10 +193,11 @@ const SecondForm = (props) => {
               <option value="scotiabanks">Scotiabank</option>
             </Form.Control>
           </Form.Group>
-          <Form.Group as={Col} md="6" controlId="validationCustom04">
-            <Form.Label>Número de cuenta de abono</Form.Label>
+          <Form.Group as={Col} md="12" controlId="validationCustom04">
+            <Form.Label className="colorLabel">Número de cuenta de abono</Form.Label>
             <Form.Control
               type="number"
+              className="custom-input"
               placeholder="5246-0100-0312-0523"
               name="cuenta"
               value={values.cuenta}
@@ -219,7 +232,7 @@ const SecondForm = (props) => {
           <Button type="button" onClick={() => clickToRedirect()}>Ok</Button>
         </Modal.Body>
       </Modal>
-    </>
+    </div>
   );
 };
 export default SecondForm;

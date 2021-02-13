@@ -23,15 +23,6 @@ code {
   background-color: #C5165B;
 }
 
-.form-align {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
 .colorLabel {
   text-align: start;
   font-weight: bold;
@@ -52,10 +43,10 @@ code {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  padding-left: 0px;
+  margin: 0px auto;
+  padding: 0px;
   counter-reset: step;
   color: white;
-  padding-left: 0px;
   width: 90%;
 }
 
@@ -197,6 +188,20 @@ p.hola2 {
   margin-top: 1rem;
   display: block;
   padding-bottom: black;
+}
+
+.referenc3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.title-form {
+  color: #C5165B;
+  font-weight: bold;
 }
 
 .custom-input {
@@ -374,9 +379,16 @@ p.hola2 {
   text-align: center;
 }
 
+.btnListTasas {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .btnListTasas button {
-  margin-left: 1em;
-  margin-right: 1em;
   border: 1px solid #C5165B;
   background-color: #C5165B;
   color: #ddd;

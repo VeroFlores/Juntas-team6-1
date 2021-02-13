@@ -25,12 +25,14 @@ const Completed = (props) => {
       <section id="prestamos" className="padded">
         <Image src="https://susociodenegocios.com/wp-content/uploads/2019/02/mujer-duena-de-su-negocio.jpg" fluid />
         <div className="referenc">
-          <p> Solicitud 100% Digital</p>
+          <h1 className="h3"> Solicitud 100% Digital</h1>
         </div>
-        <p className="hola">
-          Por favor completa el siguiente formulario,
-          el banco se comunicará contigo para la gestión.
-        </p>
+        <div className="referenc2">
+          <p className="hola">
+            Por favor completa el siguiente formulario,
+            el banco se comunicará contigo para la gestión.
+          </p>
+        </div>
         <p className="hola">
           *Nunca te pediremos claves de tus cuentas
         </p>
